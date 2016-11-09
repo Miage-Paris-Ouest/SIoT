@@ -1,5 +1,6 @@
 
-
+ 
+[![travis project](https://travis-ci.org/Miage-Paris-Ouest/m1c20152016-planibu.svg)](https://travis-ci.org/Miage-Paris-Ouest/SIoT/)
 **Projet SIOT**
 *****************
 <p> Inquiets pour un parent ? 
