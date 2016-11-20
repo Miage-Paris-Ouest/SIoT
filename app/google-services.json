@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "461362503225",
+    "firebase_url": "https://siot-150117.firebaseio.com",
+    "project_id": "siot-150117",
+    "storage_bucket": "siot-150117.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461362503225:android:ae141c1b365313af",
+        "android_client_info": {
+          "package_name": "siot.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461362503225-8m2lv7ss81llbsi96lv4es8b4lga7l13.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAS9Mr6G2h_izwJWHYCXOBhHctda7UWgo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
