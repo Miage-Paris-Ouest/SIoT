@@ -16,7 +16,8 @@
         android:layout_alignParentEnd="true"
         android:id="@+id/switch3"
         android:layout_alignParentTop="true"
-        android:layout_alignBottom="@+id/mouvement" />
+        android:layout_alignBottom="@+id/mouvement"
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:text="Mouvement"
@@ -29,7 +30,9 @@
         android:textStyle="normal|bold"
         android:onClick="true"
         android:clickable="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="19dp" />
 
     <TextView
         android:text="Lumière"
@@ -41,7 +44,9 @@
         android:id="@+id/lumière"
         android:textSize="30sp"
         android:textStyle="normal|bold"
-        android:layout_alignEnd="@+id/son" />
+        android:layout_alignEnd="@+id/son"
+        android:layout_alignRight="@+id/son"
+        android:layout_alignLeft="@+id/son" />
 
     <TextView
         android:text="Son"
@@ -52,7 +57,9 @@
         android:textStyle="normal|bold"
         android:layout_alignTop="@+id/switch4"
         android:layout_alignStart="@+id/mouvement"
-        android:layout_alignEnd="@+id/mouvement" />
+        android:layout_alignEnd="@+id/mouvement"
+        android:layout_alignLeft="@+id/mouvement"
+        android:layout_alignRight="@+id/mouvement" />
 
     <Switch
         android:layout_width="wrap_content"
@@ -60,14 +67,16 @@
         android:id="@+id/switch4"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/switch3"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
 
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/switch5"
         android:layout_alignTop="@+id/lumière"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
 
     <Switch
         android:layout_width="wrap_content"
@@ -75,7 +84,8 @@
         android:id="@+id/switch2"
         android:layout_below="@+id/lumière"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="35dp" />
+        android:layout_marginTop="35dp"
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:text="Fumée"
@@ -85,6 +95,7 @@
         android:textSize="30sp"
         android:textStyle="normal|bold"
         android:layout_alignTop="@+id/switch2"
-        android:layout_alignStart="@+id/lumière" />
+        android:layout_alignStart="@+id/lumière"
+        android:layout_alignLeft="@+id/lumière" />
 
 </RelativeLayout>
