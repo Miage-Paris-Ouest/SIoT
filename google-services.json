@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "484641832555",
+    "firebase_url": "https://siotapplication.firebaseio.com",
+    "project_id": "siotapplication",
+    "storage_bucket": "siotapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484641832555:android:ae141c1b365313af",
+        "android_client_info": {
+          "package_name": "siot.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484641832555-eguo97ipvgmural2hggm7g5jiqlo2llk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "siot.application",
+            "certificate_hash": "737B9F62C77477D3BEDF93254C7B5027F0EEE9E0"
+          }
+        },
+        {
+          "client_id": "484641832555-32lgr081u3lnrqajvo7t6r8la6p9kq2l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBetW_DjgxDjySwS3sAr2btldzeAEYdhck"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484641832555-32lgr081u3lnrqajvo7t6r8la6p9kq2l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
