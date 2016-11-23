@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -21,6 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-       // System.out.println("MainActivity.onCreate:" + FirebaseInstanceId.getInstance().getToken());
+       System.out.println("Token:" + FirebaseInstanceId.getInstance().getToken());
     }
 }

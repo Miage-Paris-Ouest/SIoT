@@ -24,15 +24,16 @@
         <activity android:name=".ChoixCapteurs"></activity>
 
         <service
-            android:name=".MyFirebaseMessagingService"
+            android:name=".fcm.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
             </intent-filter>
         </service>
 
         <service
-            android:name=".MyFirebaseInstanceIdService"
+            android:name=".fcm.MyFirebaseInstanceIDService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
