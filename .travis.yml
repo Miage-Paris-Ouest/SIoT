@@ -29,5 +29,9 @@ android:
 before_install:
  - chmod +x gradlew
  
+notifications:
+
+slack: siot-miage:2a022WNT3zbXYEpvyfGsEXmN
+ 
 script:
   - ./gradlew clean build
