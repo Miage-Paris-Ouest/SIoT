@@ -22,6 +22,8 @@
             android:label="@string/title_activity_mouvement"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ChoixCapteurs"></activity>
+        <activity android:name=".AndroidMobilePushApp"></activity>
+
 
         <service
             android:name=".fcm.MyFirebaseMessagingService"
