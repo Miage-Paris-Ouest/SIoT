@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "199023594485",
+    "firebase_url": "https://awssiot2.firebaseio.com",
+    "project_id": "awssiot2",
+    "storage_bucket": "awssiot2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199023594485:android:6bd268b0f5afb1a8",
+        "android_client_info": {
+          "package_name": "siot.awssiot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "199023594485-sp69g30q39l25keh2j8gc3h0gcrudju7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "siot.awssiot",
+            "certificate_hash": "737B9F62C77477D3BEDF93254C7B5027F0EEE9E0"
+          }
+        },
+        {
+          "client_id": "199023594485-mp0qlramqpeo26tobspeait87lsqb04l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCALppRxyVrKNmGBd8YrVpLkeB0x5u6sqY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "199023594485-mp0qlramqpeo26tobspeait87lsqb04l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
