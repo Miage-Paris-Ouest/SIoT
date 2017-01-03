@@ -11,3 +11,10 @@
 .idea
 /.gradle
 /.idea
+app/src/main/java/siot/application/ExternalReceiver.java
+
+app/src/main/java/siot/application/AmazonSNSClientWrapper.java
+
+app/src/main/java/siot/application/MessageReceivingService.java
+
+app/src/main/java/siot/application/SNSMobilePush.java
