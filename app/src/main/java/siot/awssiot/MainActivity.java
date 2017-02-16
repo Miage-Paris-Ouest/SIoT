@@ -34,6 +34,7 @@ import android.widget.Toast;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.RemoteMessage;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -86,6 +87,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Button dashboardButton = (Button) findViewById(R.id.boutonDashboard);
+        dashboardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Dashboard.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 
 }

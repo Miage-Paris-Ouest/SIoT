@@ -25,8 +25,6 @@ public class capteurMouvement extends Activity {
         setContentView(R.layout.activity_capteur_mouvement);
 
 
-        displayNotification();
-
         final Button fumee = (Button) findViewById(R.id.appel);
         fumee.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -50,45 +48,6 @@ public class capteurMouvement extends Activity {
         });
 
 
-    }
-
-    protected void displayNotification() {
-        Log.i("Start", "notification");
-
-   /* Invoking the default notification service */
-        NotificationCompat.Builder  mBuilder = new NotificationCompat.Builder(this);
-
-        mBuilder.setContentTitle("Aucun mouvement détecté!");
-        mBuilder.setContentText("Cliquer pour appeler.");
-        mBuilder.setTicker("Attention aucun mouvement détecté!");
-        mBuilder.setSmallIcon(R.drawable.ic_menu_share);
-
-   /* Increase notification number every time a new notification arrives */
-        mBuilder.setNumber(1);
-
-   /* Add Big View Specific Configuration */
-        NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
-
-
-
-
-        mBuilder.setStyle(inboxStyle);
-
-   /* Creates an explicit intent for an Activity in your app */
-        Intent resultIntent = new Intent(this, capteurMouvement.class);
-
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
-        stackBuilder.addParentStack(capteurMouvement.class);
-
-   /* Adds the Intent that starts the Activity to the top of the stack */
-        stackBuilder.addNextIntent(resultIntent);
-        PendingIntent resultPendingIntent =stackBuilder.getPendingIntent(0,PendingIntent.FLAG_UPDATE_CURRENT);
-
-        mBuilder.setContentIntent(resultPendingIntent);
-        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-   /* notificationID allows you to update the notification later on. */
-        mNotificationManager.notify(1, mBuilder.build());
     }
 
 }

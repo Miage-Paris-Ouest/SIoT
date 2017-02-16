@@ -23,5 +23,15 @@ public class listeCapteurs extends Activity {
 
             }
         });
+
+        TextView lumiere = (TextView)findViewById(R.id.lumiere);
+        lumiere.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(listeCapteurs.this, capteurLumiere.class);
+                startActivity(intent);
+
+            }
+        });
     }
 }

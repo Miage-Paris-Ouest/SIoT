@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,14 +8,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@android:color/background_light">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="68dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_gravity="center_horizontal"
-         />
+        android:layout_weight="0.04"
+        app:srcCompat="@mipmap/logo" />
 
     <TextView
         android:id="@+id/informationTextView"
@@ -22,20 +25,51 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
-        android:text="@string/quickstart_message" />
+        android:text="@string/quickstart_message"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="30sp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5" />
 
     <Button
         android:id="@+id/logTokenButton"
-        android:layout_width="@dimen/standard_field_width"
+        android:layout_width="197dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/log_token" />
+        android:text="@string/log_token"
+        android:background="@android:color/holo_blue_dark" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3" />
 
     <Button
-        android:id="@+id/boutonCapteur"
-        android:layout_width="204dp"
+android:id="@+id/boutonCapteur"
+android:layout_width="198dp"
+android:layout_height="wrap_content"
+android:layout_gravity="center_horizontal"
+android:text="@string/boutonCapteur"
+        android:background="@android:color/holo_blue_dark" />
+
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6" />
+
+    <Button
+        android:id="@+id/boutonDashboard"
+        android:layout_width="198dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/boutonCapteur" />
+        android:text="Dashboard"
+        android:background="@android:color/holo_blue_dark" />
 
 </LinearLayout>
