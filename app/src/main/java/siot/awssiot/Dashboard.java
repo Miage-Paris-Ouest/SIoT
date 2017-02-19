@@ -1,21 +1,16 @@
 package siot.awssiot;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.util.Scanner;
 
 
 public class Dashboard extends AppCompatActivity {
@@ -25,7 +20,11 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        final ProgressBar myprogressBar;
+        final ProgressBar myprogressBar_lux;
+        final ProgressBar myprogressBar_mvt;
+        final ProgressBar myprogressBar_son;
+        final ProgressBar myprogressBar_temp;
+
         final TextView progressingTextView;
         final TextView progress_circle_temp;
         final TextView progress_circle_lux;
@@ -34,11 +33,50 @@ public class Dashboard extends AppCompatActivity {
         //final Handler progressHandler = new Handler();
 
 
-        myprogressBar = (ProgressBar) findViewById(R.id.progressBar);
-        progress_circle_temp = (TextView) findViewById(R.id.progress_circle_text3);
-        progress_circle_lux = (TextView) findViewById(R.id.progress_circle_text);
-        progress_circle_mvt = (TextView) findViewById(R.id.progress_circle_text1);
-        progress_circle_son = (TextView) findViewById(R.id.progress_circle_text4);
+      //  myprogressBar_lux = (ProgressBar) findViewById(R.id.progressBar_lux);
+       // final Button button_lux = (Button) findViewById(R.id.button_lux);
+
+        myprogressBar_mvt = (ProgressBar) findViewById(R.id.progressBar_mvt);
+        myprogressBar_son = (ProgressBar) findViewById(R.id.progressBar_son);
+        myprogressBar_temp = (ProgressBar) findViewById(R.id.progressBar_temp);
+
+        //redirection vers reglages de capteurs
+        /*
+        button_lux.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, ConfigLux.class);
+                startActivity(intent);
+            }
+        });
+
+        */
+
+      /*  myprogressBar_mvt.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, ConfigMvt.class);
+                startActivity(intent);
+            }
+        });
+
+        myprogressBar_son.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, ConfigSon.class);
+                startActivity(intent);
+            }
+        });
+
+        myprogressBar_temp.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, ConfigTemp.class);
+                startActivity(intent);
+            }
+        });
+*/
+
+        progress_circle_temp = (TextView) findViewById(R.id.progress_circle_temp);
+        progress_circle_lux = (TextView) findViewById(R.id.progress_circle_lux);
+        progress_circle_mvt = (TextView) findViewById(R.id.progress_circle_mvt);
+        progress_circle_son = (TextView) findViewById(R.id.progress_circle_son);
 
         MyNotificationsReceiver mnr = new MyNotificationsReceiver();
         mnr.onReceive(getApplicationContext(), getIntent());

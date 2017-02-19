@@ -46,7 +46,7 @@
                             android:textColor="@color/colorPrimary" />
 
                         <ProgressBar
-                            android:id="@+id/progressBar"
+                            android:id="@+id/progressBar_lux"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="200dp"
                             android:layout_height="200dp"
@@ -58,7 +58,7 @@
                             android:progressDrawable="@drawable/circular_progress_bar" />
 
                         <TextView
-                            android:id="@+id/progress_circle_text"
+                            android:id="@+id/progress_circle_lux"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
@@ -68,6 +68,7 @@
                             android:textColor="@color/colorPrimary"
                             android:textSize="30sp"
                             android:textStyle="bold" />
+
                     </RelativeLayout>
                 </LinearLayout>
 
@@ -96,7 +97,7 @@
 
 
                         <ProgressBar
-                            android:id="@+id/progressBar1"
+                            android:id="@+id/progressBar_mvt"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="200dp"
                             android:layout_height="200dp"
@@ -108,7 +109,7 @@
                             android:progressDrawable="@drawable/circular_progress_bar" />
 
                         <TextView
-                            android:id="@+id/progress_circle_text1"
+                            android:id="@+id/progress_circle_mvt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
@@ -151,7 +152,7 @@
                             android:textColor="@color/colorPrimary" />
 
                         <ProgressBar
-                            android:id="@+id/progressBar3"
+                            android:id="@+id/progressBar_temp"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="200dp"
                             android:layout_height="200dp"
@@ -163,7 +164,7 @@
                             android:progressDrawable="@drawable/circular_progress_bar" />
 
                         <TextView
-                            android:id="@+id/progress_circle_text3"
+                            android:id="@+id/progress_circle_temp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
@@ -211,7 +212,7 @@
 
 
                         <ProgressBar
-                            android:id="@+id/progressBar4"
+                            android:id="@+id/progressBar_son"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="200dp"
                             android:layout_height="200dp"
@@ -223,7 +224,7 @@
                             android:progressDrawable="@drawable/circular_progress_bar" />
 
                         <TextView
-                            android:id="@+id/progress_circle_text4"
+                            android:id="@+id/progress_circle_son"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
