@@ -10,7 +10,7 @@ Grove - Moisture Sensor (3.3/5V)(Analog):
 Grove - Ear-clip Heart Rate Sensor (3.3/5V)(Digital):
 	http://wiki.seeedstudio.com/wiki/Grove_-_Heart_rate_ear_clip_kit
 
-Grove - Gas Sensor MQ3 (5V)(Analog) [Fonctionnel après 24h]:
+Grove - Gas Sensor MQ3 (5V)(Analog) [Fonctionnel aprÃ¨s 24h]:
 	http://wiki.seeed.cc/Grove-Gas_Sensor-MQ3/
 
 Grove - UV Sensor (3.3/5V)(Analog):
