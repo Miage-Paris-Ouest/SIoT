@@ -10,6 +10,7 @@ Puis on entre la commande :
 
 - configure_edison --wifi 
 
+<a href="https://github.com/Miage-Paris-Ouest/SIoT/blob/master/img/abonnements.PNG">Le prototype de départ</a>
 
 Un scan va être lancé, puis une liste des wifi disponibles sera proposée.
 On choisit celui qui nous intéresse.
