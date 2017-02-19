@@ -42,6 +42,21 @@
         <activity
             android:name=".listeCapteurs"
             android:label="@string/title_activity_liste_capteurs" />
+
+        <activity
+            android:name=".ConfigLux"
+            android:label="ConfigLux" />
+        <activity
+            android:name=".ConfigMvt"
+            android:label="ConfigMvt" />
+        <activity
+            android:name=".ConfigTemp"
+            android:label="ConfigTemp" />
+        <activity
+            android:name=".ConfigSon"
+            android:label="ConfigSon" />
+
+        
         <activity
             android:name=".Dashboard"
             android:label="@string/title_activity_dashboard">
