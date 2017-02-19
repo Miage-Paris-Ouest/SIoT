@@ -19,15 +19,20 @@ android:
     - build-tools-23.0.2
 
     # The SDK version used to compile the project
-    - android-23
+    - android-25
 
     # Repositories for Gradle and Maven
     - extra-android-m2repository
     - extra-google-m2repository
-     - tools
-     - extra
-     - extra-google-google_play_services
-
+    - tools
+    - extra
+    - extra-google-google_play_services
+    - build-tools-25.0.1
+    - extra-android-m2repository
+licenses:
+    - 'android-sdk-preview-license-.+'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
 
 before_install:
  - chmod +x gradlew
