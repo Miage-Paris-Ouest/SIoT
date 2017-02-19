@@ -8,6 +8,9 @@ On lance la configuration wifi :
 Ifconfig wlan0 up
 Puis on entre la commande :
 
+- configure_edison --wifi 
+
+
 Un scan va être lancé, puis une liste des wifi disponibles sera proposée.
 On choisit celui qui nous intéresse.
 
