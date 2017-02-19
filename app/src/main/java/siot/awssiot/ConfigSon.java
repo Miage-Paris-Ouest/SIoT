@@ -11,6 +11,9 @@ public class ConfigSon extends Activity {
         setContentView(R.layout.dashboard_config_son);
 
 
+
+
+
         }
 
 }

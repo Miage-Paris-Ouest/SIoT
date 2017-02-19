@@ -31,7 +31,7 @@ public class Dashboard extends AppCompatActivity {
         final TextView progress_circle_mvt;
         final TextView progress_circle_son;
         //final Handler progressHandler = new Handler();
-       //  myprogressBar_lux = (ProgressBar) findViewById(R.id.progressBar_lux);
+        // myprogressBar_lux = (ProgressBar) findViewById(R.id.progressBar_lux);
        // final Button button_lux = (Button) findViewById(R.id.button_lux);
 
         myprogressBar_mvt = (ProgressBar) findViewById(R.id.progressBar_mvt);
@@ -49,13 +49,13 @@ public class Dashboard extends AppCompatActivity {
 
         */
 
-      /*  myprogressBar_mvt.setOnClickListener(new View.OnClickListener() {
+       myprogressBar_mvt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Dashboard.this, ConfigMvt.class);
                 startActivity(intent);
             }
         });
-
+ /*
         myprogressBar_son.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Dashboard.this, ConfigSon.class);
