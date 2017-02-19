@@ -14,10 +14,42 @@
 
 
     <TextView
+        android:text="Configuration Mouvement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+        android:id="@+id/textView8"
+        android:textSize="30sp" />
+
+    <TextView
+        android:text="Recevoir une notification quand plus de mouvement depuis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView7"
+        android:textColor="@color/light_black"
+        android:textSize="22sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:textColor="?attr/colorPrimary" />
+
+    <TextView
+        android:text="heures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:textColor="@color/colorPrimary" />
 
 
 </LinearLayout>

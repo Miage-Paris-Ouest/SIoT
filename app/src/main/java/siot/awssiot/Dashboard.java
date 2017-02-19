@@ -31,23 +31,19 @@ public class Dashboard extends AppCompatActivity {
         final TextView progress_circle_mvt;
         final TextView progress_circle_son;
         //final Handler progressHandler = new Handler();
-        // myprogressBar_lux = (ProgressBar) findViewById(R.id.progressBar_lux);
-       // final Button button_lux = (Button) findViewById(R.id.button_lux);
-
+        myprogressBar_lux = (ProgressBar) findViewById(R.id.progressBar_lux);
         myprogressBar_mvt = (ProgressBar) findViewById(R.id.progressBar_mvt);
         myprogressBar_son = (ProgressBar) findViewById(R.id.progressBar_son);
         myprogressBar_temp = (ProgressBar) findViewById(R.id.progressBar_temp);
 
         //redirection vers reglages de capteurs
-        /*
-        button_lux.setOnClickListener(new View.OnClickListener() {
+
+        myprogressBar_lux.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Dashboard.this, ConfigLux.class);
                 startActivity(intent);
             }
         });
-
-        */
 
        myprogressBar_mvt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -55,7 +51,7 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
- /*
+
         myprogressBar_son.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Dashboard.this, ConfigSon.class);
@@ -69,7 +65,7 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-*/
+
 
         progress_circle_temp = (TextView) findViewById(R.id.progress_circle_temp);
         progress_circle_lux = (TextView) findViewById(R.id.progress_circle_lux);

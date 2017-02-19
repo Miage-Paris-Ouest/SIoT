@@ -8,7 +8,7 @@ public class ConfigLux extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_liste_capteurs);
+        setContentView(R.layout.dashboard_config_lumiere);
 
 
         }
