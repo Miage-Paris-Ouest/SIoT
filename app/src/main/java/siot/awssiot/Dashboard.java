@@ -31,9 +31,7 @@ public class Dashboard extends AppCompatActivity {
         final TextView progress_circle_mvt;
         final TextView progress_circle_son;
         //final Handler progressHandler = new Handler();
-
-
-      //  myprogressBar_lux = (ProgressBar) findViewById(R.id.progressBar_lux);
+       //  myprogressBar_lux = (ProgressBar) findViewById(R.id.progressBar_lux);
        // final Button button_lux = (Button) findViewById(R.id.button_lux);
 
         myprogressBar_mvt = (ProgressBar) findViewById(R.id.progressBar_mvt);
