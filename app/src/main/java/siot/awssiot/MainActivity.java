@@ -1,5 +1,6 @@
 package siot.awssiot;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -88,11 +89,13 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-
             }
 
                 }).start();
                 Toast.makeText(getApplicationContext(), "Token envoyé!", Toast.LENGTH_LONG).show();
+
+                send.setClickable(false);
+                send.setBackgroundColor(0);
 
             }
 
