@@ -42,7 +42,6 @@
         <activity
             android:name=".listeCapteurs"
             android:label="@string/title_activity_liste_capteurs" />
-
         <activity
             android:name=".ConfigLux"
             android:label="ConfigLux" />
@@ -61,8 +60,6 @@
         <activity
             android:name=".ConfigGaz"
             android:label="ConfigGaz" />
-
-        
         <activity
             android:name=".Dashboard"
             android:label="@string/title_activity_dashboard">
@@ -72,7 +69,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".capteurLumiere"></activity>
+        <activity android:name=".capteurLumiere" />
     </application>
 
 </manifest>
