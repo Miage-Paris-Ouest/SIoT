@@ -9,7 +9,7 @@
     <string name="quickstart_message">Bienvenue sur l\'application SIoT!
     </string>
     <string name="subscribe_to_news">Subscribe To News</string>
-    <string name="log_token">Afficher Token</string>
+    <string name="log_token">Envoyer Token</string>
     <string name="boutonCapteur">Liste des capteurs</string>
 
     <string name="msg_subscribed">Subscribed to news topic</string>
