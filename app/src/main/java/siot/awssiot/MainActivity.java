@@ -126,6 +126,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+       /* Button home = (Button) findViewById(R.id.boutonHome);
+        home.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ScrollingActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        */
+
 
     }
     public void envoiTokenMail(String token)
@@ -133,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Intent email = new Intent(Intent.ACTION_SEND);
+        email.putExtra(Intent.EXTRA_EMAIL, new String[]{"pascal.orsini@outlook.com"});
         email.putExtra(Intent.EXTRA_SUBJECT, "Votre token");
         email.putExtra(Intent.EXTRA_TEXT, "Votre token est : \n " + token);
         email.setType("message/rfc822");

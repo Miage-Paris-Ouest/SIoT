@@ -56,7 +56,9 @@
         android:layout_below="@+id/lumiere"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="35dp"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignLeft="@+id/switch5"
+        android:layout_alignStart="@+id/switch5" />
 
     <TextView
         android:text="Fumée"
@@ -121,5 +123,47 @@
         android:layout_below="@+id/switch3"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch7"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/switch3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/switch4"
+        android:layout_alignStart="@+id/switch4" />
+
+    <TextView
+        android:text="Air Quality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/air"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"
+        android:onClick="true"
+        android:clickable="true"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/switch2"
+        android:layout_alignLeft="@+id/fumee"
+        android:layout_alignStart="@+id/fumee" />
+
+    <TextView
+        android:text="Gaz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gaz"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"
+        android:onClick="true"
+        android:clickable="true"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/air"
+        android:layout_alignLeft="@+id/air"
+        android:layout_alignStart="@+id/air" />
+
 
 </RelativeLayout>
