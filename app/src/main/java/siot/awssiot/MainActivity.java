@@ -2,6 +2,7 @@ package siot.awssiot;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Button suivant = (Button) findViewById(R.id.boutonCapteur);
+        final Button send = (Button) this.findViewById(R.id.logTokenButton);
 
         // If a notification message is tapped, any data accompanying the notification
         // message is available in the intent extras. In this sample the launcher
@@ -65,23 +67,34 @@ public class MainActivity extends AppCompatActivity {
         }
         // [END handle_data_extras]
 
-        final Button send = (Button) this.findViewById(R.id.logTokenButton);
+
         send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                                    public void onClick(View v) {
-                                        // TODO Auto-generated method stub
+                new Thread(new Runnable() {
 
-                                        try {
-                                            GMailSender sender = new GMailSender("safetyinternetofthings@gmail.com", "siot2016");
-                                            sender.sendMail("This is Subject",
-                                                    "This is Body",
-                                                    "safetyinternetofthings@gmail.com",
-                                            "safetyinternetofthings@gmail.com");
-                                        } catch (Exception e) {
-                                            Log.e("SendMail", e.getMessage(), e);
-                                        }
-                                    }
-                                });
+                    public void run() {
+
+
+                String user = "safetyinternetofthings@gmail.com";
+                String password = "siot2016";
+                String token = FirebaseInstanceId.getInstance().getToken();
+                GMailSender sender = new GMailSender(user, password);
+                try {
+                    sender.sendMail("Token", token, "safetyinternetofthings@gmail.com", "safetyinternetofthings@gmail.com");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+
+                }).start();
+
+            }
+
+        });
 
       /*  Button logTokenButton = (Button) findViewById(R.id.logTokenButton);
         logTokenButton.setOnClickListener(new View.OnClickListener() {
@@ -138,6 +151,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
     public void envoiTokenMail(String token)
     {
 
