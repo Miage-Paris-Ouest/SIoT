@@ -55,6 +55,12 @@
         <activity
             android:name=".ConfigSon"
             android:label="ConfigSon" />
+        <activity
+            android:name=".ConfigAir"
+            android:label="ConfigAir" />
+        <activity
+            android:name=".ConfigGaz"
+            android:label="ConfigGaz" />
 
         
         <activity

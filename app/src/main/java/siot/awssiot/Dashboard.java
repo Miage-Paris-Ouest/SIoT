@@ -24,17 +24,24 @@ public class Dashboard extends AppCompatActivity {
         final ProgressBar myprogressBar_mvt;
         final ProgressBar myprogressBar_son;
         final ProgressBar myprogressBar_temp;
+        final ProgressBar myprogressBar_air;
+        final ProgressBar myprogressBar_gaz;
 
         final TextView progressingTextView;
         final TextView progress_circle_temp;
         final TextView progress_circle_lux;
         final TextView progress_circle_mvt;
         final TextView progress_circle_son;
+        final TextView progress_circle_gaz;
+        final TextView progress_circle_air;
+
         //final Handler progressHandler = new Handler();
         myprogressBar_lux = (ProgressBar) findViewById(R.id.progressBar_lux);
         myprogressBar_mvt = (ProgressBar) findViewById(R.id.progressBar_mvt);
         myprogressBar_son = (ProgressBar) findViewById(R.id.progressBar_son);
         myprogressBar_temp = (ProgressBar) findViewById(R.id.progressBar_temp);
+       myprogressBar_air = (ProgressBar) findViewById(R.id.progressBar_air);
+        myprogressBar_gaz = (ProgressBar) findViewById(R.id.progressBar_gaz);
 
         //redirection vers reglages de capteurs
 
@@ -67,10 +74,27 @@ public class Dashboard extends AppCompatActivity {
         });
 
 
+        myprogressBar_air.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, ConfigAir.class);
+                startActivity(intent);
+            }
+        });
+
+        myprogressBar_gaz.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, ConfigGaz.class);
+                startActivity(intent);
+            }
+        });
+
+
         progress_circle_temp = (TextView) findViewById(R.id.progress_circle_temp);
         progress_circle_lux = (TextView) findViewById(R.id.progress_circle_lux);
         progress_circle_mvt = (TextView) findViewById(R.id.progress_circle_mvt);
         progress_circle_son = (TextView) findViewById(R.id.progress_circle_son);
+        /*progress_circle_air = (TextView) findViewById(R.id.progress_circle_air);
+        progress_circle_gaz = (TextView) findViewById(R.id.progress_circle_gaz);*/
 
         MyNotificationsReceiver mnr = new MyNotificationsReceiver();
         mnr.onReceive(getApplicationContext(), getIntent());
@@ -87,11 +111,15 @@ public class Dashboard extends AppCompatActivity {
             String lux = obj.getString("lux");
             String mvt = obj.getString("mvt");
             String son = obj.getString("son");
+           /* String air = obj.getString("air");
+            String gaz = obj.getString("gaz");*/
 
             progress_circle_temp.setText(temp);
             progress_circle_lux.setText(lux);
             progress_circle_mvt.setText(mvt);
             progress_circle_son.setText(son);
+           /* progress_circle_air.setText(air);
+            progress_circle_gaz.setText(gaz);*/
 
         } catch (Throwable t) {
             Log.e("My App", "Could not parse malformed JSON: \"" + titre + "\"");
