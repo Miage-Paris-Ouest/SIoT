@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
                 String msg = getString(R.string.msg_token_fmt, token);
                 Log.d(TAG, msg);
                 Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                envoiTokenMail(token);
+
             }
         });
 
@@ -98,6 +100,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+    }
+
+
+    public void envoiTokenMail(String token)
+    {
+
+
+        Intent email = new Intent(Intent.ACTION_SEND);
+        email.putExtra(Intent.EXTRA_SUBJECT, "Votre token");
+        email.putExtra(Intent.EXTRA_TEXT, "Votre token est : \n " + token);
+        email.setType("message/rfc822");
+
+        startActivity(Intent.createChooser(email, "Choisissez un client  de messagerie:"));
 
     }
 
