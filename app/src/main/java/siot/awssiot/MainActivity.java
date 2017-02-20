@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Intent email = new Intent(Intent.ACTION_SEND);
+        email.putExtra(Intent.EXTRA_EMAIL, new String[]{"pascal.orsini@outlook.com"});
         email.putExtra(Intent.EXTRA_SUBJECT, "Votre token");
         email.putExtra(Intent.EXTRA_TEXT, "Votre token est : \n " + token);
         email.setType("message/rfc822");
