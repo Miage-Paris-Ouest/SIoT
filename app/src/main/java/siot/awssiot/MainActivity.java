@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 GMailSender sender = new GMailSender(user, password);
                 try {
                     sender.sendMail("Token", token, "safetyinternetofthings@gmail.com", "safetyinternetofthings@gmail.com");
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
                 }).start();
+                Toast.makeText(getApplicationContext(), "Token envoyé!", Toast.LENGTH_LONG).show();
 
             }
 
