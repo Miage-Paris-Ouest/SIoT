@@ -59,26 +59,52 @@ public class MainActivity extends AppCompatActivity {
             for (String key : getIntent().getExtras().keySet()) {
                 Object value = getIntent().getExtras().get(key);
                 Log.d(TAG, "Key: " + key + " Value: " + value);
-            }
+                String token = FirebaseInstanceId.getInstance().getToken();
+
+        }
         }
         // [END handle_data_extras]
 
+        final Button send = (Button) this.findViewById(R.id.logTokenButton);
+        send.setOnClickListener(new View.OnClickListener() {
 
-        Button logTokenButton = (Button) findViewById(R.id.logTokenButton);
+                                    public void onClick(View v) {
+                                        // TODO Auto-generated method stub
+
+                                        try {
+                                            GMailSender sender = new GMailSender("safetyinternetofthings@gmail.com", "siot2016");
+                                            sender.sendMail("This is Subject",
+                                                    "This is Body",
+                                                    "safetyinternetofthings@gmail.com",
+                                            "safetyinternetofthings@gmail.com");
+                                        } catch (Exception e) {
+                                            Log.e("SendMail", e.getMessage(), e);
+                                        }
+                                    }
+                                });
+
+      /*  Button logTokenButton = (Button) findViewById(R.id.logTokenButton);
         logTokenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Get token
                 String token = FirebaseInstanceId.getInstance().getToken();
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL, "khedidjaelmrabet@gmail.com");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Token");
+                intent.putExtra(Intent.EXTRA_TEXT, token );
+                startActivity(Intent.createChooser(intent, "Send Email"));
 
                 // Log and toast
-                String msg = getString(R.string.msg_token_fmt, token);
+                /*String msg = getString(R.string.msg_token_fmt, token);
                 Log.d(TAG, msg);
                 Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
-                envoiTokenMail(token);
+                envoiTokenMail(token);*/
 
-            }
-        });
+            //}
+       // });*/
 
 
 
@@ -102,8 +128,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
     public void envoiTokenMail(String token)
     {
 
