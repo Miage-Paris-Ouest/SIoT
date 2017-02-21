@@ -40,7 +40,7 @@ public class Dashboard extends AppCompatActivity {
         myprogressBar_mvt = (ProgressBar) findViewById(R.id.progressBar_mvt);
         myprogressBar_son = (ProgressBar) findViewById(R.id.progressBar_son);
         myprogressBar_temp = (ProgressBar) findViewById(R.id.progressBar_temp);
-       myprogressBar_air = (ProgressBar) findViewById(R.id.progressBar_air);
+        myprogressBar_air = (ProgressBar) findViewById(R.id.progressBar_air);
         myprogressBar_hum = (ProgressBar) findViewById(R.id.progressBar_hum);
 
         //redirection vers reglages de capteurs
@@ -93,8 +93,8 @@ public class Dashboard extends AppCompatActivity {
         progress_circle_lux = (TextView) findViewById(R.id.progress_circle_lux);
         progress_circle_mvt = (TextView) findViewById(R.id.progress_circle_mvt);
         progress_circle_son = (TextView) findViewById(R.id.progress_circle_son);
-        /*progress_circle_air = (TextView) findViewById(R.id.progress_circle_air);
-        progress_circle_hum = (TextView) findViewById(R.id.progress_circle_hum);*/
+        progress_circle_air = (TextView) findViewById(R.id.progress_circle_air);
+        progress_circle_hum = (TextView) findViewById(R.id.progress_circle_hum);
 
         MyNotificationsReceiver mnr = new MyNotificationsReceiver();
         mnr.onReceive(getApplicationContext(), getIntent());
@@ -111,15 +111,16 @@ public class Dashboard extends AppCompatActivity {
             String lux = obj.getString("lux");
             String mvt = obj.getString("mvt");
             String son = obj.getString("son");
-           /* String air = obj.getString("air");
-            String hum = obj.getString("hum");*/
+            String air = obj.getString("air");
+            String hum = obj.getString("hum");
 
             progress_circle_temp.setText(temp);
             progress_circle_lux.setText(lux);
             progress_circle_mvt.setText(mvt);
             progress_circle_son.setText(son);
-           /* progress_circle_air.setText(air);
-            progress_circle_hum.setText(hum);*/
+            progress_circle_air.setText(air);
+            progress_circle_hum.setText(hum);
+
 
         } catch (Throwable t) {
             Log.e("My App", "Could not parse malformed JSON: \"" + titre + "\"");
