@@ -3,7 +3,7 @@ package siot.awssiot;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class ConfigGaz extends Activity {
+public class ConfigHum extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

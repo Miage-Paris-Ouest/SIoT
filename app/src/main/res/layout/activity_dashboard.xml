@@ -209,14 +209,14 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="16dp"
-                            android:text="Gaz"
+                            android:text="Humidité"
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textColor="@color/colorPrimary" />
 
 
                         <ProgressBar
-                            android:id="@+id/progressBar_gaz"
+                            android:id="@+id/progressBar_hum"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="200dp"
                             android:layout_height="200dp"
@@ -228,7 +228,7 @@
                             android:progressDrawable="@drawable/circular_progress_bar" />
 
                         <TextView
-                            android:id="@+id/progress_circle_gaz"
+                            android:id="@+id/progress_circle_hum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"

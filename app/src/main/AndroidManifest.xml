@@ -58,7 +58,7 @@
             android:name=".ConfigAir"
             android:label="ConfigAir" />
         <activity
-            android:name=".ConfigGaz"
+            android:name=".ConfigHum"
             android:label="ConfigGaz" />
         <activity
             android:name=".Dashboard"
