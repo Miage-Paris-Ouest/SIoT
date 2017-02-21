@@ -78,12 +78,4 @@ android:text="@string/boutonCapteur"
         android:layout_height="wrap_content"
         android:id="@+id/textView7" />
 
-    <Button
-        android:id="@+id/boutonHome"
-        android:layout_width="198dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Home"
-        android:background="@android:color/holo_blue_dark" />
-
 </LinearLayout>
