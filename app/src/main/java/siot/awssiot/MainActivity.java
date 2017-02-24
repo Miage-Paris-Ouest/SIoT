@@ -1,7 +1,9 @@
 package siot.awssiot;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Button suivant = (Button) findViewById(R.id.boutonCapteur);
+        final Button send = (Button) this.findViewById(R.id.logTokenButton);
 
         // If a notification message is tapped, any data accompanying the notification
         // message is available in the intent extras. In this sample the launcher
@@ -59,24 +62,67 @@ public class MainActivity extends AppCompatActivity {
             for (String key : getIntent().getExtras().keySet()) {
                 Object value = getIntent().getExtras().get(key);
                 Log.d(TAG, "Key: " + key + " Value: " + value);
-            }
+                String token = FirebaseInstanceId.getInstance().getToken();
+
+        }
         }
         // [END handle_data_extras]
 
 
-        Button logTokenButton = (Button) findViewById(R.id.logTokenButton);
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new Thread(new Runnable() {
+
+                    public void run() {
+
+
+                String user = "safetyinternetofthings@gmail.com";
+                String password = "siot2016";
+                String token = FirebaseInstanceId.getInstance().getToken();
+                GMailSender sender = new GMailSender(user, password);
+                try {
+                    sender.sendMail("Token", token, "safetyinternetofthings@gmail.com", "safetyinternetofthings@gmail.com");
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+                }).start();
+                Toast.makeText(getApplicationContext(), "Token envoyé!", Toast.LENGTH_LONG).show();
+
+                send.setClickable(false);
+                send.setBackgroundColor(0);
+
+            }
+
+        });
+
+      /*  Button logTokenButton = (Button) findViewById(R.id.logTokenButton);
         logTokenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Get token
                 String token = FirebaseInstanceId.getInstance().getToken();
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL, "khedidjaelmrabet@gmail.com");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Token");
+                intent.putExtra(Intent.EXTRA_TEXT, token );
+                startActivity(Intent.createChooser(intent, "Send Email"));
 
                 // Log and toast
-                String msg = getString(R.string.msg_token_fmt, token);
+                /*String msg = getString(R.string.msg_token_fmt, token);
                 Log.d(TAG, msg);
                 Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
-            }
-        });
+                envoiTokenMail(token);*/
+
+            //}
+       // });*/
 
 
 
@@ -98,6 +144,31 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+       /* Button home = (Button) findViewById(R.id.boutonHome);
+        home.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ScrollingActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        */
+
+
+    }
+
+
+    public void envoiTokenMail(String token)
+    {
+
+
+        Intent email = new Intent(Intent.ACTION_SEND);
+        email.putExtra(Intent.EXTRA_EMAIL, new String[]{"pascal.orsini@outlook.com"});
+        email.putExtra(Intent.EXTRA_SUBJECT, "Votre token");
+        email.putExtra(Intent.EXTRA_TEXT, "Votre token est : \n " + token);
+        email.setType("message/rfc822");
+
+        startActivity(Intent.createChooser(email, "Choisissez un client  de messagerie:"));
 
     }
 

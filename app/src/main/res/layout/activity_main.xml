@@ -72,4 +72,10 @@ android:text="@string/boutonCapteur"
         android:text="Dashboard"
         android:background="@android:color/holo_blue_dark" />
 
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView7" />
+
 </LinearLayout>
