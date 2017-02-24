@@ -11,13 +11,14 @@
     android:weightSum="1"
     android:background="@android:color/background_light">
 
-    <ImageView
-        android:layout_width="68dp"
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.04"
-        app:srcCompat="@mipmap/logo" />
+        android:id="@+id/textView5"
+        android:background="@android:color/background_light"
+        android:textColor="@android:color/background_light"
+        android:layout_marginTop="200dp" />
 
     <TextView
         android:id="@+id/informationTextView"
@@ -29,53 +30,70 @@
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="30sp" />
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="68dp"
         android:layout_height="wrap_content"
-        android:id="@+id/textView5" />
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.04"
+        app:srcCompat="@mipmap/logo" />
 
     <Button
         android:id="@+id/logTokenButton"
         android:layout_width="197dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_gravity="center_horizontal"
         android:text="@string/log_token"
-        android:background="@android:color/holo_blue_dark" />
+        android:background="@android:color/holo_blue_dark"
+        android:textColorHighlight="@android:color/white"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3" />
+        android:id="@+id/textView3"
+        android:textColor="@android:color/background_light" />
 
     <Button
 android:id="@+id/boutonCapteur"
 android:layout_width="198dp"
-android:layout_height="wrap_content"
+android:layout_height="35dp"
 android:layout_gravity="center_horizontal"
 android:text="@string/boutonCapteur"
-        android:background="@android:color/holo_blue_dark" />
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/background_light" />
 
 
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView6" />
+        android:id="@+id/textView6"
+        android:textColor="@android:color/background_light" />
 
     <Button
         android:id="@+id/boutonDashboard"
         android:layout_width="198dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_gravity="center_horizontal"
         android:text="Dashboard"
-        android:background="@android:color/holo_blue_dark" />
+        android:background="@android:color/holo_blue_dark"
+        tools:textColor="@android:color/background_light" />
 
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView7" />
+        android:id="@+id/textView15"
+        android:textColor="@android:color/background_light"
+        android:layout_weight="0.04" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView7"
+        android:textColor="@android:color/background_light" />
 
 </LinearLayout>
