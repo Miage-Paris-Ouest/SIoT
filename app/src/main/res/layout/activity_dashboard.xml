@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/White"
+    >
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -11,12 +12,24 @@
         android:background="#ddd">
 
 
+
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:background="@color/lightgrey"
+            android:id="@+id/fond_dashboard">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="DASHBOARD"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/text" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -45,6 +58,13 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textColor="@color/colorPrimary" />
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/logo_lux"
+
+                            />
 
                         <ProgressBar
                             android:id="@+id/progressBar_lux"
@@ -72,7 +92,7 @@
 
                     </RelativeLayout>
                 </LinearLayout>
-<!--2-->
+                <!--2-->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -95,6 +115,14 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textColor="@color/colorPrimary" />
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/logo_temp"
+
+                            />
 
 
                         <ProgressBar
@@ -124,7 +152,7 @@
                     </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
-<!--3-->
+            <!--3-->
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -154,6 +182,14 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textColor="@color/colorPrimary" />
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/logo_air"
+
+                            />
 
                         <ProgressBar
                             android:id="@+id/progressBar_air"
@@ -214,6 +250,14 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorPrimary" />
 
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/logo_hum"
+
+                            />
+
 
                         <ProgressBar
                             android:id="@+id/progressBar_hum"
@@ -269,6 +313,14 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:textColor="@color/colorPrimary" />
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/logo_mvt"
+
+                            />
 
                         <ProgressBar
                             android:id="@+id/progressBar_mvt"
@@ -329,6 +381,14 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorPrimary" />
 
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/logo_son"
+
+                            />
+
 
                         <ProgressBar
                             android:id="@+id/progressBar_son"
@@ -370,3 +430,4 @@
     </ScrollView>
 
 </LinearLayout>
+

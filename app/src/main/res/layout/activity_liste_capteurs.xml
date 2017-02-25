@@ -1,94 +1,756 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_choix_capteurs"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="siot.application.ChoixCapteurs"
-    android:background="@android:color/background_light">
+    android:background="@color/White"
+    android:orientation="vertical">
+
 
     <TextView
-        android:text="Lumière"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/son"
-        android:layout_alignStart="@+id/son"
-        android:layout_marginTop="34dp"
-        android:id="@+id/lumiere"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        android:layout_alignEnd="@+id/son"
-        android:layout_alignRight="@+id/son"
-        android:layout_alignLeft="@+id/son"
-        android:textColor="@android:color/holo_blue_dark" />
+        android:layout_margin="16dp"
+        android:text="CONFIGURATION ALARMES"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/text" />
 
     <TextView
-        android:text="Son"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/son"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        android:layout_alignTop="@+id/switch4"
-        android:layout_alignStart="@+id/mouvement"
-        android:layout_alignEnd="@+id/mouvement"
-        android:layout_alignLeft="@+id/mouvement"
-        android:layout_alignRight="@+id/mouvement"
-        android:textColor="@android:color/holo_blue_dark" />
+        android:layout_margin="16dp"
+        android:text="Vous pouvez activer / desactiver les capteurs que vous souhaitez et définir un seuil à partir duquel vous souhaiteriez être notifié."
+        />
 
-    <Switch
-        android:layout_width="wrap_content"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginRight="135dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/lightgrey"></View>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/switch5"
-        android:layout_alignTop="@+id/lumiere"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" />
+        android:layout_gravity="center"
+        android:orientation="horizontal">
 
-    <Switch
-        android:layout_width="wrap_content"
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:backgroundTint="@color/lightgrey" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+            android:text="Light: Quand lumière" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1.9"
+            android:gravity="right">
+
+
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/logo_sup"
+
+                />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_ccv"
+            android:padding="5dp"
+            android:layout_marginRight="3dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:hint="seuil"
+                android:inputType="number"
+                android:maxLength="3"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textColor="@color/text"
+                android:textColorHint="@color/lightgrey"
+                android:textSize="11dp"
+                android:layout_marginRight="3sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1.9"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/logo_lux"
+
+                android:layout_marginRight="-8dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/switch2"
-        android:layout_below="@+id/lumiere"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="35dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignLeft="@+id/switch5"
-        android:layout_alignStart="@+id/switch5" />
+        android:layout_gravity="center"
+        android:orientation="horizontal">
 
-    <TextView
-        android:text="Fumée"
-        android:layout_width="wrap_content"
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+
+            android:text="Temp: Quand température" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1.9"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/logo_sup"
+
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_ccv"
+            android:padding="5dp"
+            android:layout_marginRight="3sp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:hint="seuil"
+                android:inputType="number"
+                android:maxLength="3"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textColor="@color/text"
+                android:textColorHint="@color/lightgrey"
+                android:textSize="11dp"
+                android:layout_marginRight="3sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1.9"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/logo_temp"
+
+                android:layout_marginRight="-8dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/fumee"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        android:layout_alignTop="@+id/switch2"
-        android:layout_alignStart="@+id/lumiere"
-        android:layout_alignLeft="@+id/lumiere"
-        android:textColor="@android:color/holo_blue_dark" />
+        android:layout_gravity="center"
+        android:orientation="horizontal">
 
-    <ImageView
-        android:layout_width="wrap_content"
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+
+            android:text="Air Quality: Quand qualité" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1.9"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/logo_sup"
+
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_ccv"
+            android:padding="5dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:hint="seuil"
+                android:inputType="number"
+                android:maxLength="3"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textColor="@color/text"
+                android:textColorHint="@color/lightgrey"
+                android:textSize="11dp"
+                android:layout_marginRight="3sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1.9"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/logo_air"
+
+                android:layout_marginRight="-8dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/logo"
-        android:layout_alignBottom="@+id/textView2"
-        android:id="@+id/imageView" />
+        android:layout_gravity="center"
+        android:orientation="horizontal">
 
-    <TextView
-        android:text="Liste des capteurs"
-        android:layout_width="wrap_content"
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+
+            android:text="Humidity: Quand humidité" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1.9"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/logo_sup"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_ccv"
+            android:padding="5dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:hint="seuil"
+                android:inputType="number"
+                android:maxLength="3"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textColor="@color/text"
+                android:textColorHint="@color/lightgrey"
+                android:textSize="11dp"
+                android:layout_marginRight="3sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1.9"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/logo_hum"
+
+                android:layout_marginRight="-8dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="30sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_gravity="center"
+        android:orientation="horizontal">
 
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+
+            android:text="Mvt: Quand Mouvement" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1.9"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/logo_sup"
+                android:id="@+id/mouvement"
+
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_ccv"
+            android:padding="5dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:hint="seuil"
+                android:inputType="number"
+                android:maxLength="3"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textColor="@color/text"
+                android:textColorHint="@color/lightgrey"
+                android:textSize="11dp"
+                android:layout_marginRight="3sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1.9"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/logo_mvt"
+
+                android:layout_marginRight="-8dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+
+            android:text="Son: Quand son" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1.9"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/logo_sup"
+
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_ccv"
+            android:padding="5dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:hint="seuil"
+                android:inputType="number"
+                android:maxLength="3"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textColor="@color/text"
+                android:textColorHint="@color/lightgrey"
+                android:textSize="11dp"
+                android:layout_marginRight="3sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1.9"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/logo_son"
+
+                android:layout_marginRight="-8dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/alarmButton"
+        android:layout_width="180sp"
+        android:layout_height="35sp"
+        android:layout_gravity="center_horizontal"
+        android:text="ENREGISTRER"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@color/White"
+        android:layout_marginTop="40sp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginRight="135dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorAccent"></View>
+
+
+    <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/bg_ccv"
+            android:orientation="horizontal"
+            android:padding="13dp">
+
+
+            <customfonts.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:paddingRight="11dp"
+                android:text="CARD NUMBER"
+                android:textColor="@color/lightgrey"
+                android:textSize="@dimen/sub_text" />
+
+            <customfonts.MyEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:inputType="number"
+                android:maxLength="20"
+                android:lines="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textColor="@color/text"
+                android:textColorHint="@color/text"
+                android:textSize="@dimen/text" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/master"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_ccv"
+            android:orientation="horizontal"
+            android:padding="14dp">
+
+
+            <customfonts.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:paddingRight="6dp"
+                android:text="NAME ON CARD"
+                android:textColor="@color/lightgrey"
+                android:textSize="@dimen/sub_text" />
+
+            <customfonts.MyEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:maxLength="25"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:lines="1"
+                android:textColor="@color/text"
+                android:textColorHint="@color/text"
+                android:textSize="@dimen/text" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ccv"
+                android:orientation="horizontal"
+                android:padding="14dp">
+
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingRight="6dp"
+                    android:text="EXPIRES ON"
+                    android:textColor="@color/lightgrey"
+                    android:textSize="@dimen/sub_text" />
+
+                <customfonts.MyEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:maxLength="5"
+                    android:paddingLeft="5dp"
+                    android:lines="1"
+                    android:paddingRight="5dp"
+                    android:textColor="@color/text"
+                    android:textColorHint="@color/text"
+                    android:textSize="@dimen/text" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ccv"
+                android:orientation="horizontal"
+                android:padding="14dp">
+
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:paddingRight="6dp"
+                    android:text="CCV"
+                    android:textColor="@color/lightgrey"
+                    android:textSize="@dimen/sub_text" />
+
+                <customfonts.MyEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:lines="1"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textColor="@color/text"
+                    android:textColorHint="@color/text"
+                    android:textSize="@dimen/text" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="41dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+
+            android:orientation="horizontal"
+            android:padding="14dp">
+
+
+            <customfonts.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:text="ENREGISTRER"
+                android:textColor="@color/White"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/img" />
+
+    -->
+</LinearLayout>
+
+
+
+
+    <!--
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,71 +761,19 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="Mouvement"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:id="@+id/mouvement"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        android:onClick="true"
-        android:clickable="true"
-        android:layout_marginLeft="11dp"
-        android:textColor="@android:color/holo_blue_dark"
-        android:layout_marginTop="38dp"
-        android:layout_below="@+id/imageView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/switch4"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/switch3"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/switch7"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/switch3"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/switch4"
-        android:layout_alignStart="@+id/switch4" />
-
-    <TextView
-        android:text="Air Quality"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/air"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        android:onClick="true"
-        android:clickable="true"
-        android:textColor="@android:color/holo_blue_dark"
-        android:layout_marginTop="23dp"
-        android:layout_below="@+id/switch2"
-        android:layout_alignLeft="@+id/fumee"
-        android:layout_alignStart="@+id/fumee" />
-
-    <TextView
-        android:text="Gaz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gaz"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        android:onClick="true"
-        android:clickable="true"
-        android:textColor="@android:color/holo_blue_dark"
-        android:layout_marginTop="17dp"
-        android:layout_below="@+id/air"
-        android:layout_alignLeft="@+id/air"
-        android:layout_alignStart="@+id/air" />
-
-
-</RelativeLayout>
+    android:text="Mouvement"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="11dp"
+    android:id="@+id/mouvement"
+    android:textSize="20sp"
+    android:textStyle="normal|bold"
+    android:onClick="true"
+    android:clickable="true"
+    android:layout_marginLeft="11dp"
+    android:textColor="@android:color/holo_blue_dark"
+    android:layout_marginTop="38dp"
+    android:layout_below="@+id/imageView"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" />
+        -->

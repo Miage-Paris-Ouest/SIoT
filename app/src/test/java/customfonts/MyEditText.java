@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.widget.EditText;
 
 /**
- * Created by one on 3/12/15.
+ * Created by leyla on 23/02/2017.
  */
 public class MyEditText extends EditText {
 

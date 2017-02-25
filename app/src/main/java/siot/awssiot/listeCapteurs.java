@@ -1,10 +1,10 @@
 package siot.awssiot;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 public class listeCapteurs extends Activity {
 
@@ -14,8 +14,8 @@ public class listeCapteurs extends Activity {
         setContentView(R.layout.activity_liste_capteurs);
 
 
-        TextView fumee = (TextView)findViewById(R.id.mouvement);
-        fumee.setOnClickListener(new View.OnClickListener() {
+        ImageView mvt = (ImageView) findViewById(R.id.mouvement);
+        mvt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(listeCapteurs.this, capteurMouvement.class);
@@ -24,7 +24,7 @@ public class listeCapteurs extends Activity {
             }
         });
 
-        TextView lumiere = (TextView)findViewById(R.id.lumiere);
+      /*  TextView lumiere = (TextView)findViewById(R.id.lumiere);
         lumiere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,5 +33,6 @@ public class listeCapteurs extends Activity {
 
             }
         });
+        */
     }
 }

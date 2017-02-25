@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 /**
- * Created by one on 3/12/15.
+ * Created by leyla on 23/02/2017.
  */
 public class MyTextView extends TextView {
 
@@ -27,7 +27,7 @@ public class MyTextView extends TextView {
 
     private void init() {
         if (!isInEditMode()) {
-            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "fonts/MavenPro-Regular.ttf");
+            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "customfonts/fonts/MavenPro-Regular.ttf");
             setTypeface(tf);
         }
     }
