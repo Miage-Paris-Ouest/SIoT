@@ -48,5 +48,16 @@ public class listeCapteurs extends Activity {
 
         });
 
+        ImageView back_versdashboard = (ImageView) findViewById(R.id.back_vDash);
+        back_versdashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(listeCapteurs.this, Dashboard.class);
+                startActivity(intent);
+
+            }
+        });
+
+
     }
 }

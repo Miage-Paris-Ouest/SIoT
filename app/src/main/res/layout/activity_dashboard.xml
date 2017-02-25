@@ -12,9 +12,6 @@
         android:background="#ddd">
 
 
-
-
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,13 +20,6 @@
             android:weightSum="1"
             android:background="@color/lightgrey"
             android:id="@+id/fond_dashboard">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="DASHBOARD"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="@dimen/text" />
 
             <LinearLayout
                 android:layout_width="fill_parent"

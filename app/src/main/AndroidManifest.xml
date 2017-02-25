@@ -70,6 +70,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".capteurLumiere" />
+        <activity android:name=".Bienvenue"></activity>
     </application>
 
 </manifest>

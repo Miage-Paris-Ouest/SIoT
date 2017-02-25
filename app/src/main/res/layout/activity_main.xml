@@ -18,7 +18,23 @@
         android:id="@+id/textView5"
         android:background="@android:color/background_light"
         android:textColor="@android:color/background_light"
-        android:layout_marginTop="200dp" />
+        android:layout_marginTop="150dp" />
+    <ImageView
+        android:layout_width="68dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.15"
+        app:srcCompat="@mipmap/logo" />
+    <TextView
+        android:id="@+id/informationTextViewTitre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="SIoT"
+        android:textColor="@color/colorAccent"
+        android:textSize="35sp" />
 
     <TextView
         android:id="@+id/informationTextView"
@@ -27,17 +43,14 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
         android:text="@string/quickstart_message"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="30sp" />
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="26sp"
+        android:layout_marginBottom="20dp" />
 
-    <ImageView
-        android:layout_width="68dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.04"
-        app:srcCompat="@mipmap/logo" />
 
+
+
+<!--
     <Button
         android:id="@+id/logTokenButton"
         android:layout_width="197dp"
@@ -47,6 +60,7 @@
         android:background="@android:color/holo_blue_dark"
         android:textColorHighlight="@android:color/white"
         android:textColor="@android:color/white" />
+
 
     <TextView
         android:text="TextView"
@@ -61,7 +75,7 @@ android:layout_width="198dp"
 android:layout_height="35dp"
 android:layout_gravity="center_horizontal"
 android:text="@string/boutonCapteur"
-        android:background="@android:color/holo_blue_dark"
+        android:background="color/holo_blue_dark"
         android:textColor="@android:color/background_light" />
 
 
@@ -95,5 +109,24 @@ android:text="@string/boutonCapteur"
         android:layout_height="wrap_content"
         android:id="@+id/textView7"
         android:textColor="@android:color/background_light" />
+
+
+        -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginRight="135dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorAccent"></View>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="right"
+        android:src="@mipmap/logo_sup"
+        android:id="@+id/next_bienvenu"
+        android:layout_marginTop="150dp" />
 
 </LinearLayout>

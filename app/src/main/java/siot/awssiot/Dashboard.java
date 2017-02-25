@@ -2,13 +2,11 @@ package siot.awssiot;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import org.json.JSONObject;
 
@@ -125,5 +123,29 @@ public class Dashboard extends AppCompatActivity {
         } catch (Throwable t) {
             Log.e("My App", "Could not parse malformed JSON: \"" + titre + "\"");
         }
+
+
+       /* ImageView next_listecap = (ImageView) findViewById(R.id.next_listecapteurs);
+        next_listecap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, listeCapteurs.class);
+                startActivity(intent);
+
+            }
+        });
+
+        ImageView back_versbienvienue = (ImageView) findViewById(R.id.back_vBienvenue);
+        back_versbienvienue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, Bienvenue.class);
+                startActivity(intent);
+
+            }
+        });
+        */
     }
+
+
     }

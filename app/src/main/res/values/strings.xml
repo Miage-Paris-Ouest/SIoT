@@ -6,7 +6,7 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="quickstart_message">Bienvenue sur l\'application SIoT!
+    <string name="quickstart_message">Safety Internet of Things
     </string>
     <string name="subscribe_to_news">Subscribe To News</string>
     <string name="log_token">Envoyer Token</string>

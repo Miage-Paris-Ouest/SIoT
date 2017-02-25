@@ -513,8 +513,11 @@
                 android:layout_marginRight="-8dp" />
         </LinearLayout>
 
-
     </LinearLayout>
+
+
+
+
 
     <Button
         android:id="@+id/alarmButton"
@@ -522,7 +525,7 @@
         android:layout_height="35sp"
         android:layout_gravity="center_horizontal"
         android:text="ENREGISTRER"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@color/colorPrimary"
         android:textColor="@color/White"
         android:layout_marginTop="40sp" />
 
@@ -535,6 +538,13 @@
         android:layout_marginTop="16dp"
         android:background="@color/colorAccent"></View>
 
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="left"
+        android:src="@mipmap/logo_inf"
+        android:id="@+id/back_vDash"
+        android:layout_marginTop="80dp" />
 
     <!--
         <LinearLayout
