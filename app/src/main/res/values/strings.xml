@@ -23,6 +23,9 @@
     <string name="action_example">Example action</string>
     <string name="title_activity_capteur_mouvement">capteurMouvement</string>
     <string name="text_NOMouvement">Aucun Mouvement détécté !</string>
+    <string name="text_conf_air">Recevoir une notificatioin quand Qualité d air INF à </string>
+    <string name="text_conf_hum">Recevoir une notificatioin quand Humidité ></string>
+
 
     <string name="title_activity_dashboard">Dashboard</string>
     <string name="title_activity_main2">Main2Activity</string>

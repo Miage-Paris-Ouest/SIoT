@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView1"
-        android:textSize="30sp"
+        android:textSize="22sp"
         android:textColor="@color/colorPrimary" />
 
     <TextView
@@ -26,7 +26,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView8"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textColor="@color/White" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/logo_lux"
+        android:id="@+id/imageView2" />
 
     <TextView
         android:text="Recevoir une notification quand lumière > "
@@ -34,7 +41,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView7"
         android:textColor="@color/light_black"
-        android:textSize="22sp" />
+        android:textSize="15sp" />
 
     <EditText
         android:layout_width="match_parent"
