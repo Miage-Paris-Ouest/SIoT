@@ -52,7 +52,7 @@ public class Dashboard extends AppCompatActivity {
 
        myprogressBar_mvt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(Dashboard.this, ConfigMvt.class);
+                Intent intent = new Intent(Dashboard.this, capteurMouvement.class);
                 startActivity(intent);
             }
         });
@@ -122,28 +122,6 @@ public class Dashboard extends AppCompatActivity {
         } catch (Throwable t) {
             Log.e("My App", "Could not parse malformed JSON: \"" + titre + "\"");
         }
-
-
-       /* ImageView next_listecap = (ImageView) findViewById(R.id.next_listecapteurs);
-        next_listecap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Dashboard.this, listeCapteurs.class);
-                startActivity(intent);
-
-            }
-        });
-
-        ImageView back_versbienvienue = (ImageView) findViewById(R.id.back_vBienvenue);
-        back_versbienvienue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Dashboard.this, Bienvenue.class);
-                startActivity(intent);
-
-            }
-        });
-        */
     }
 
 

@@ -1,8 +1,11 @@
 package siot.awssiot;
 
+import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +16,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 
 public class Bienvenue extends AppCompatActivity {
     private static final String TAG = "MainActivity";
+    public boolean etatButtonToken = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +25,6 @@ public class Bienvenue extends AppCompatActivity {
 
         final Button send = (Button) this.findViewById(R.id.logTokenButton);
 
-        // If a notification message is tapped, any data accompanying the notification
-        // message is available in the intent extras. In this sample the launcher
-        // intent is fired when the notification is tapped, so any accompanying data would
-        // be handled here. If you want a different intent fired, set the click_action
-        // field of the notification message to the desired intent. The launcher intent
-        // is used when no click_action is specified.
-        //
-        // Handle possible data accompanying notification message.
-        // [START handle_data_extras]
         if (getIntent().getExtras() != null) {
             for (String key : getIntent().getExtras().keySet()) {
                 Object value = getIntent().getExtras().get(key);
@@ -38,8 +33,6 @@ public class Bienvenue extends AppCompatActivity {
 
             }
         }
-        // [END handle_data_extras]
-
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,8 +41,6 @@ public class Bienvenue extends AppCompatActivity {
                 new Thread(new Runnable() {
 
                     public void run() {
-
-
                         String user = "safetyinternetofthings@gmail.com";
                         String password = "siot2016";
                         String token = FirebaseInstanceId.getInstance().getToken();
@@ -60,29 +51,27 @@ public class Bienvenue extends AppCompatActivity {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-
                     }
 
                 }).start();
-                Toast.makeText(getApplicationContext(), "Token envoyé!", Toast.LENGTH_LONG).show();
 
                 send.setClickable(false);
+                etatButtonToken = false;
                 send.setBackgroundColor(0);
+                Toast.makeText(getApplicationContext(), "Token envoyé!", Toast.LENGTH_LONG).show();
+
 
             }
 
         });
 
+        // sauvegarde l'etat du bouton
+       Context context = getApplicationContext();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        prefs.edit().putBoolean("etatButtonToken", false);
+        prefs.edit().apply();
+        prefs.getBoolean("etatButtonToken", true);
 
-        ImageView next_dash = (ImageView) findViewById(R.id.next_dashboard);
-        next_dash.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Bienvenue.this, Dashboard.class);
-                startActivity(intent);
-
-            }
-        });
 
         final Button suivant = (Button) findViewById(R.id.boutonCapteur);
 
@@ -102,6 +91,19 @@ public class Bienvenue extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        ImageView next_dash = (ImageView) findViewById(R.id.next_dashboard);
+        next_dash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Bienvenue.this, Dashboard.class);
+                startActivity(intent);
+
+            }
+        });
+
+
 
     }
 
