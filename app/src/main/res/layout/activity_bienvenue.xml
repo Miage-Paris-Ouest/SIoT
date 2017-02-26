@@ -57,7 +57,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_weight="1"
 
-                android:text="Dans un premier temps, vous allez vous identifier à l'aide de ce token. En cliquant sur ce bouton, vous permettez à Amazon de lier votre téléphone à l'application " />
+                android:text="Dans un premier temps, vous allez vous enregistrer à l'aide d'un token. En cliquant sur le bouton ' M'ENREGISTRER ', vous permettez à Amazon de lier votre téléphone à l'application " />
 
 
         </LinearLayout>
@@ -67,7 +67,7 @@
             android:layout_width="198sp"
             android:layout_height="35sp"
             android:layout_gravity="center_horizontal"
-            android:text="ENVOYER TOKEN"
+            android:text="M'ENREGISTRER"
             android:background="@color/colorPrimary"
             android:textColor="@color/White"
             android:layout_marginTop="20sp" />
