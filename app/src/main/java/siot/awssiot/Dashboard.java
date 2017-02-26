@@ -99,7 +99,6 @@ public class Dashboard extends AppCompatActivity {
 
         Intent intent = getIntent();
         String titre = intent.getStringExtra("titre");
-        titre = titre + "}";
 
         try {
             JSONObject obj = new JSONObject(titre);

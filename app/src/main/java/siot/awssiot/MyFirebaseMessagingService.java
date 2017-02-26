@@ -61,18 +61,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         if (remoteMessage.getData().size() > 0) {
             Log.d(TAG, "Message data payload: " +  remoteMessage.getData());
 
-            String titre = remoteMessage.getData().toString().replace("{default=", "").replace("}", "").trim();
-            sendNotification(titre);
+            String titreNotification = remoteMessage.getData().toString().replace("\"son\"", "Sonorité").replace("\"mvt\":1", "On Mouvement").replace("\"mvt\":0", "Pas de mouvement").replace("\"hum\"", "Humidité").replace("\"lux\"", "Luminosité % ").replace("{default=", "").replace("\"temp\"", "Température").replace("{", "").replace("\"air\"", "Air").replace("}", "").trim();
+            sendNotification(titreNotification);
 
-            System.out.println("avant notif : " + titre);
-
+            String titre = remoteMessage.getData().toString().replace("{default=", "").trim();
             Intent intent = new Intent(this,Dashboard.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("titre", titre);
             startActivity(intent);
-
-
-
 
         }
 
