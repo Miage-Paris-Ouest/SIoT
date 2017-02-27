@@ -38,8 +38,21 @@ public class listeCapteurs extends Activity {
     private Switch switchHumidity;
     private Switch switchMVT;
     private Switch switchSon;
+
     Boolean lum = null;
+    Boolean tmp = null;
+    Boolean air = null;
+    Boolean hum = null;
+    Boolean mvt = null;
+    Boolean son = null;
+
+
     String seuilLux;
+    String seuilTmp;
+    String seuilAir;
+    String seuilHum;
+    String seuilMvt;
+    String seuilSon;
 
     SharedPreferences sharedPref2;
     @Override
@@ -174,6 +187,81 @@ public class listeCapteurs extends Activity {
         });
 
 
+        switchAir.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(switchAir.isChecked()){
+                    switchAirOn();
+                }
+
+                else {
+                    switchAirOff();
+                }
+
+            }
+        });
+
+
+        switchTemp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(switchTemp.isChecked()){
+                    switchTmpOn();
+                }
+
+                else {
+                    switchTmpOff();
+                }
+
+            }
+        });
+
+
+        switchHumidity.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(switchHumidity.isChecked()){
+                    switchHumOn();
+                }
+
+                else {
+                    switchHumOff();
+                }
+
+            }
+        });
+
+
+        switchMVT.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(switchMVT.isChecked()){
+                    switchMvtOn();
+                }
+
+                else {
+                    switchMvtOff();
+                }
+
+            }
+        });
+
+
+        switchSon.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(switchSon.isChecked()){
+                    switchSonOn();
+                }
+
+                else {
+                    switchSonOff();
+                }
+
+            }
+        });
+
+
 
 
 
@@ -186,7 +274,6 @@ public class listeCapteurs extends Activity {
         SharedPreferences.Editor editor2 = sharedPref2.edit();
         editor2.putBoolean("putBoolean", true);
         editor2.apply();
-
     }
 
 
@@ -194,17 +281,97 @@ public class listeCapteurs extends Activity {
         lum = false;
         SharedPreferences.Editor editor2 = sharedPref2.edit();
         editor2.putBoolean("putBoolean", false);
-
         editor2.apply();
-
     }
+
+
+
+
+    public void switchTmpOn(){
+        tmp = true;
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putBoolean("putBoolean", true);
+        editor2.apply();
+    }
+
+
+    public void switchTmpOff(){
+        tmp = false;
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putBoolean("putBoolean", false);
+        editor2.apply();
+    }
+
+
+    public void switchAirOn(){
+        air = true;
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putBoolean("putBoolean", true);
+        editor2.apply();
+    }
+
+
+    public void switchAirOff(){
+        air = false;
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putBoolean("putBoolean", false);
+        editor2.apply();
+    }
+
+
+    public void switchHumOn(){
+        hum = true;
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putBoolean("putBoolean", true);
+        editor2.apply();
+    }
+
+
+    public void switchHumOff(){
+        hum = false;
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putBoolean("putBoolean", false);
+        editor2.apply();
+    }
+
+
+    public void switchMvtOn(){
+        mvt = true;
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putBoolean("putBoolean", true);
+        editor2.apply();
+    }
+
+
+    public void switchMvtOff(){
+        mvt = false;
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putBoolean("putBoolean", false);
+        editor2.apply();
+    }
+
+
+    public void switchSonOn(){
+        son = true;
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putBoolean("putBoolean", true);
+        editor2.apply();
+    }
+
+
+    public void switchSonOff(){
+        son = false;
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putBoolean("putBoolean", false);
+        editor2.apply();
+    }
+
+
 
     public void onBackPressed() {
         Intent intent = new Intent(listeCapteurs.this, Bienvenue.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
         startActivity(intent);
-
         return;
     }
     }
