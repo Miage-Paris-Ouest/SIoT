@@ -42,7 +42,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:backgroundTint="@color/lightgrey" />
+            android:backgroundTint="@color/lightgrey"
+            android:id="@+id/switchLumiere" />
 
         <TextView
             android:layout_width="match_parent"
@@ -127,7 +128,8 @@
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp" />
+            android:layout_marginLeft="16dp"
+            android:id="@+id/switchTemp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -209,7 +211,8 @@
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp" />
+            android:layout_marginLeft="16dp"
+            android:id="@+id/switchAir" />
 
         <TextView
             android:layout_width="match_parent"
@@ -289,7 +292,8 @@
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp" />
+            android:layout_marginLeft="16dp"
+            android:id="@+id/switchHumidity" />
 
         <TextView
             android:layout_width="match_parent"
@@ -368,7 +372,8 @@
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp" />
+            android:layout_marginLeft="16dp"
+            android:id="@+id/switchMVT" />
 
         <TextView
             android:layout_width="match_parent"
@@ -450,7 +455,8 @@
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp" />
+            android:layout_marginLeft="16dp"
+            android:id="@+id/switchSon" />
 
         <TextView
             android:layout_width="match_parent"

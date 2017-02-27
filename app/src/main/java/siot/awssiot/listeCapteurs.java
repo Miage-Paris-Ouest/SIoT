@@ -1,14 +1,20 @@
 package siot.awssiot;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.BounceInterpolator;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import java.util.List;
@@ -26,11 +32,35 @@ public class listeCapteurs extends Activity {
     ArrayAdapter<Capteurs> adapter;
     Capteurs capteurs = new Capteurs();
 
+    private Switch switchLumiere;
+    private Switch switchTemp;
+    private Switch switchAir;
+    private Switch switchHumidity;
+    private Switch switchMVT;
+    private Switch switchSon;
+    Boolean lum = null;
 
+    SharedPreferences sharedPref2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_capteurs);
+
+        sharedPref2 = this.getPreferences(Context.MODE_PRIVATE);
+
+        switchLumiere = (Switch) findViewById(R.id.switchLumiere);
+        switchTemp = (Switch) findViewById(R.id.switchLumiere);
+        switchAir = (Switch) findViewById(R.id.switchLumiere);
+        switchHumidity = (Switch) findViewById(R.id.switchLumiere);
+        switchMVT = (Switch) findViewById(R.id.switchMVT);
+        switchSon = (Switch) findViewById(R.id.switchSon);
+
+        Boolean sLum = sharedPref2.getBoolean("putBoolean", true);
+
+        System.out.println("AAAAA1 : " + sLum);
+
+
+        if (sLum) {switchLumiere.setChecked(sLum);}
 
         saveAlarmeCapteur = (Button) findViewById(R.id.alarmButton);
         seuil_lux = (EditText) findViewById(R.id.seuil_lux);
@@ -111,5 +141,58 @@ public class listeCapteurs extends Activity {
         });
 
 
+
+
+
+
+        switchLumiere.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(switchLumiere.isChecked()){
+                    switchLumOn();
+                }
+
+                else {
+                    switchLumOff();
+                }
+
+            }
+        });
+
+
+
+
+
+
+
     }
-}
+
+    public void switchLumOn(){
+        lum = true;
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putBoolean("putBoolean", true);
+        System.out.println("AAAAA2 : " + lum.toString());
+        editor2.apply();
+
+    }
+
+
+    public void switchLumOff(){
+        lum = false;
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putBoolean("putBoolean", false);
+
+        System.out.println("AAAAA2 : " + lum.toString());
+        editor2.apply();
+
+    }
+
+    public void onBackPressed() {
+        Intent intent = new Intent(listeCapteurs.this, Bienvenue.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        startActivity(intent);
+
+        return;
+    }
+    }
