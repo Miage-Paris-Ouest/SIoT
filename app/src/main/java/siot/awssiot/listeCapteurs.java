@@ -39,6 +39,7 @@ public class listeCapteurs extends Activity {
     private Switch switchMVT;
     private Switch switchSon;
     Boolean lum = null;
+    String seuilLux;
 
     SharedPreferences sharedPref2;
     @Override
@@ -57,7 +58,6 @@ public class listeCapteurs extends Activity {
 
         Boolean sLum = sharedPref2.getBoolean("putBoolean", true);
 
-        System.out.println("AAAAA1 : " + sLum);
 
 
         if (sLum) {switchLumiere.setChecked(sLum);}
@@ -72,6 +72,11 @@ public class listeCapteurs extends Activity {
 
         Toast.makeText(getApplicationContext(),"ma liste de seuil: " +list_seuil, Toast.LENGTH_LONG).show();
 
+        seuilLux = sharedPref2.getString("seuilLux", "");
+        System.out.println("AAAAA1 : " + seuilLux);
+        seuil_lux.setText(seuilLux);
+        System.out.println("AAAAA2 : " + seuilLux);
+
         saveAlarmeCapteur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,10 +84,19 @@ public class listeCapteurs extends Activity {
                 capteurs = new Capteurs(seuil_lux.getText().toString());
                 capteurs.save();
                 Toast.makeText(getApplicationContext(), "Enregistrement des seuils" + messeuilsdecapteurs, Toast.LENGTH_LONG).show();
+                SharedPreferences.Editor editor = sharedPref2.edit();
+                seuilLux = seuil_lux.getText().toString();
+                System.out.println("AAAAA3 : " + seuilLux);
 
+                editor.putString("seuilLux", seuilLux);
+                editor.apply();
             }
 
         });
+
+
+
+
 
 
 
@@ -171,7 +185,6 @@ public class listeCapteurs extends Activity {
         lum = true;
         SharedPreferences.Editor editor2 = sharedPref2.edit();
         editor2.putBoolean("putBoolean", true);
-        System.out.println("AAAAA2 : " + lum.toString());
         editor2.apply();
 
     }
@@ -182,7 +195,6 @@ public class listeCapteurs extends Activity {
         SharedPreferences.Editor editor2 = sharedPref2.edit();
         editor2.putBoolean("putBoolean", false);
 
-        System.out.println("AAAAA2 : " + lum.toString());
         editor2.apply();
 
     }
