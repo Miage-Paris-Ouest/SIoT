@@ -17,7 +17,7 @@
 <!-- install de sugar -->
         <meta-data
             android:name="DATABASE"
-            android:value="siot_sugar05.db" />
+            android:value="siot_sugar07.db" />
         <meta-data
             android:name="VERSION"
             android:value="2" />

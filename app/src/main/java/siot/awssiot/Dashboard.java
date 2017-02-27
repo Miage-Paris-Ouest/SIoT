@@ -1,6 +1,8 @@
 package siot.awssiot;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -43,6 +45,12 @@ public class Dashboard extends AppCompatActivity {
         myprogressBar_air = (ProgressBar) findViewById(R.id.progressBar_air);
         myprogressBar_hum = (ProgressBar) findViewById(R.id.progressBar_hum);
         //myprogressBar_pluie = (ProgressBar) findViewById(R.id.progressBar_pluie);
+
+
+
+
+
+
 
         //redirection vers reglages de capteurs
 
@@ -103,13 +111,33 @@ public class Dashboard extends AppCompatActivity {
         Intent intent = getIntent();
         String titre = intent.getStringExtra("titre");
 
+
+        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+
+        String tempSaved = null;
+        String tempRecup = sharedPref.getString("temp", "");
+
+
+        progress_circle_temp.setText(tempRecup);
+
+
         try {
             JSONObject obj = new JSONObject(titre);
             Log.d("My App", obj.toString());
 
 
             String temp = obj.getString("temp");// Double temp1=  Double.parseDouble(temp);
+            tempSaved = temp;
+
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("temp", tempSaved);
+            editor.apply();
             progress_circle_temp.setText(temp);
+
+
+
+
+
 
             String lux = obj.getString("lux");
             progress_circle_lux.setText(lux);
@@ -128,6 +156,8 @@ public class Dashboard extends AppCompatActivity {
 
             String pluie = obj.getString("pluie");
             progress_circle_pluie.setText(pluie);
+
+
 
 
         } catch (Throwable t) {
@@ -157,5 +187,13 @@ public class Dashboard extends AppCompatActivity {
         */
     }
 
+    public void onBackPressed() {
+        Intent intent = new Intent(Dashboard.this, Bienvenue.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
+        startActivity(intent);
+
+        return;
     }
+
+}
