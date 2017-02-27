@@ -32,6 +32,7 @@ public class Dashboard extends AppCompatActivity {
         final TextView progress_circle_son;
         final TextView progress_circle_hum;
         final TextView progress_circle_air;
+        //final TextView progress_circle_pluie;
 
         //final Handler progressHandler = new Handler();
         myprogressBar_lux = (ProgressBar) findViewById(R.id.progressBar_lux);
@@ -40,6 +41,7 @@ public class Dashboard extends AppCompatActivity {
         myprogressBar_temp = (ProgressBar) findViewById(R.id.progressBar_temp);
         myprogressBar_air = (ProgressBar) findViewById(R.id.progressBar_air);
         myprogressBar_hum = (ProgressBar) findViewById(R.id.progressBar_hum);
+        //myprogressBar_pluie = (ProgressBar) findViewById(R.id.progressBar_pluie);
 
         //redirection vers reglages de capteurs
 
@@ -52,7 +54,7 @@ public class Dashboard extends AppCompatActivity {
 
        myprogressBar_mvt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(Dashboard.this, capteurMouvement.class);
+                Intent intent = new Intent(Dashboard.this, ConfigMvt.class);
                 startActivity(intent);
             }
         });
@@ -93,6 +95,7 @@ public class Dashboard extends AppCompatActivity {
         progress_circle_son = (TextView) findViewById(R.id.progress_circle_son);
         progress_circle_air = (TextView) findViewById(R.id.progress_circle_air);
         progress_circle_hum = (TextView) findViewById(R.id.progress_circle_hum);
+       // progress_circle_pluie = (TextView) findViewById(R.id.progress_circle_pluie);
 
         MyNotificationsReceiver mnr = new MyNotificationsReceiver();
         mnr.onReceive(getApplicationContext(), getIntent());
@@ -104,24 +107,54 @@ public class Dashboard extends AppCompatActivity {
             JSONObject obj = new JSONObject(titre);
             Log.d("My App", obj.toString());
 
-            String temp = obj.getString("temp");// Double temp1=  Double.parseDouble(temp);
-            String lux = obj.getString("lux");
-            String mvt = obj.getString("mvt");
-            String son = obj.getString("son");
-            String air = obj.getString("air");
-            String hum = obj.getString("hum");
 
+            String temp = obj.getString("temp");// Double temp1=  Double.parseDouble(temp);
             progress_circle_temp.setText(temp);
+
+            String lux = obj.getString("lux");
             progress_circle_lux.setText(lux);
+
+            String mvt = obj.getString("mvt");
             progress_circle_mvt.setText(mvt);
+
+            String son = obj.getString("son");
             progress_circle_son.setText(son);
+
+            String air = obj.getString("air");
             progress_circle_air.setText(air);
+
+            String hum = obj.getString("hum");
             progress_circle_hum.setText(hum);
+
+            //String pluie = obj.getString("pluie");
+            //progress_circle_pluie.setText(pluie);
 
 
         } catch (Throwable t) {
             Log.e("My App", "Could not parse malformed JSON: \"" + titre + "\"");
         }
+
+
+       /* ImageView next_listecap = (ImageView) findViewById(R.id.next_listecapteurs);
+        next_listecap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, listeCapteurs.class);
+                startActivity(intent);
+
+            }
+        });
+
+        ImageView back_versbienvienue = (ImageView) findViewById(R.id.back_vBienvenue);
+        back_versbienvienue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, Bienvenue.class);
+                startActivity(intent);
+
+            }
+        });
+        */
     }
 
 

@@ -61,7 +61,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         if (remoteMessage.getData().size() > 0) {
             Log.d(TAG, "Message data payload: " +  remoteMessage.getData());
 
-            String titreNotification = remoteMessage.getData().toString().replace("BoitierDeconnecte", "Boîtier Déconnecté").replace("null", " ").replace("\"AlarmDescription\"", " ").replace("\"AlarmName\"", "État").replace("\"EtatConnexion:Success\"", "Boîtier connecté").replace("\"son\"", "Sonorité").replace("\"mvt\":1", "On Mouvement").replace("\"mvt\":0", "Pas de mouvement").replace("\"hum\"", "Humidité").replace("\"lux\"", "Luminosité % ").replace("{default=", "").replace("\"temp\"", "Température").replace("{", "").replace("\"air\"", "Air").replace("}", "").trim();
+            String titreNotification = remoteMessage.getData().toString().replace("\"pluie\"", "Pluie ").replace("BoitierDeconnecte", "Boîtier Déconnecté").replace("null", " ").replace("\"AlarmDescription\"", " ").replace("\"AlarmName\"", "État").replace("\"EtatConnexion:Success\"", "Boîtier connecté").replace("\"son\"", "Sonorité").replace("\"mvt\":1", "On Mouvement").replace("\"mvt\":0", "Pas de mouvement").replace("\"hum\"", "Humidité").replace("\"lux\"", "Luminosité % ").replace("{default=", "").replace("\"temp\"", "Température").replace("{", "").replace("\"air\"", "Air").replace("}", "").trim();
             sendNotification(titreNotification);
 
             String titre = remoteMessage.getData().toString().replace("{default=", "").trim();
