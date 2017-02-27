@@ -24,6 +24,7 @@ public class Dashboard extends AppCompatActivity {
         final ProgressBar myprogressBar_temp;
         final ProgressBar myprogressBar_air;
         final ProgressBar myprogressBar_hum;
+        final ProgressBar myprogressBar_pluie;
 
         final TextView progressingTextView;
         final TextView progress_circle_temp;
@@ -32,7 +33,7 @@ public class Dashboard extends AppCompatActivity {
         final TextView progress_circle_son;
         final TextView progress_circle_hum;
         final TextView progress_circle_air;
-        //final TextView progress_circle_pluie;
+        final TextView progress_circle_pluie;
 
         //final Handler progressHandler = new Handler();
         myprogressBar_lux = (ProgressBar) findViewById(R.id.progressBar_lux);
@@ -73,7 +74,6 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-
         myprogressBar_air.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Dashboard.this, ConfigAir.class);
@@ -95,7 +95,7 @@ public class Dashboard extends AppCompatActivity {
         progress_circle_son = (TextView) findViewById(R.id.progress_circle_son);
         progress_circle_air = (TextView) findViewById(R.id.progress_circle_air);
         progress_circle_hum = (TextView) findViewById(R.id.progress_circle_hum);
-       // progress_circle_pluie = (TextView) findViewById(R.id.progress_circle_pluie);
+        progress_circle_pluie = (TextView) findViewById(R.id.progress_circle_pluie);
 
         MyNotificationsReceiver mnr = new MyNotificationsReceiver();
         mnr.onReceive(getApplicationContext(), getIntent());
@@ -126,8 +126,8 @@ public class Dashboard extends AppCompatActivity {
             String hum = obj.getString("hum");
             progress_circle_hum.setText(hum);
 
-            //String pluie = obj.getString("pluie");
-            //progress_circle_pluie.setText(pluie);
+            String pluie = obj.getString("pluie");
+            progress_circle_pluie.setText(pluie);
 
 
         } catch (Throwable t) {
