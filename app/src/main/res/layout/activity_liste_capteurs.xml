@@ -245,8 +245,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/bg_ccv"
-            android:padding="5dp"
-            android:id="@+id/seuil_air">
+            android:padding="5dp">
 
             <EditText
                 android:layout_width="wrap_content"
@@ -260,7 +259,9 @@
                 android:textColor="@color/text"
                 android:textColorHint="@color/lightgrey"
                 android:textSize="11dp"
-                android:layout_marginRight="3sp" />
+                android:layout_marginRight="3sp"
+                android:id="@+id/seuil_air" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -409,7 +410,7 @@
             android:layout_gravity="center"
             android:background="@drawable/bg_ccv"
             android:padding="5dp"
-            android:id="@+id/seuil_mvt">
+            >
 
             <EditText
                 android:layout_width="wrap_content"
@@ -423,7 +424,9 @@
                 android:textColor="@color/text"
                 android:textColorHint="@color/lightgrey"
                 android:textSize="11dp"
-                android:layout_marginRight="3sp" />
+                android:layout_marginRight="3sp"
+                android:id="@+id/seuil_mvt" />
+
         </LinearLayout>
 
         <LinearLayout

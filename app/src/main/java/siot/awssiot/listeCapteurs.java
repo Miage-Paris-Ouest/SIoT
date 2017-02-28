@@ -47,12 +47,12 @@ public class listeCapteurs extends Activity {
     Boolean son = null;
 
 
-    String seuilLux;
-    String seuilTmp;
-    String seuilAir;
-    String seuilHum;
-    String seuilMvt;
-    String seuilSon;
+    String seuilLux = null;
+    String seuilTmp = "";
+    String seuilAir = null;
+    String seuilHum = null;
+    String seuilMvt = null;
+    String seuilSon = null;
 
     SharedPreferences sharedPref2;
     @Override
@@ -77,6 +77,11 @@ public class listeCapteurs extends Activity {
 
         saveAlarmeCapteur = (Button) findViewById(R.id.alarmButton);
         seuil_lux = (EditText) findViewById(R.id.seuil_lux);
+        seuil_temp = (EditText) findViewById(R.id.seuil_temp);
+        seuil_hum = (EditText) findViewById(R.id.seuil_hum);
+        seuil_son = (EditText) findViewById(R.id.seuil_son);
+        seuil_mvt = (EditText) findViewById(R.id.seuil_mvt);
+        seuil_air = (EditText) findViewById(R.id.seuil_air);
         list_seuil = (ListView) findViewById(R.id.listview_seuil);
         final List<Capteurs> messeuilsdecapteurs = Capteurs.listAll(Capteurs.class);
 
@@ -86,9 +91,18 @@ public class listeCapteurs extends Activity {
         Toast.makeText(getApplicationContext(),"ma liste de seuil: " +list_seuil, Toast.LENGTH_LONG).show();
 
         seuilLux = sharedPref2.getString("seuilLux", "");
-        System.out.println("AAAAA1 : " + seuilLux);
         seuil_lux.setText(seuilLux);
-        System.out.println("AAAAA2 : " + seuilLux);
+
+        seuilTmp = sharedPref2.getString("seuilTmp", "");
+        seuil_temp.setText(seuilTmp);
+        seuilAir = sharedPref2.getString("seuilAir", "");
+        seuil_air.setText(seuilAir);
+        seuilSon = sharedPref2.getString("seuilSon", "");
+        seuil_son.setText(seuilSon);
+        seuilMvt = sharedPref2.getString("seuilMvt", "");
+        seuil_mvt.setText(seuilMvt);
+        seuilHum = sharedPref2.getString("seuilHum", "");
+        seuil_hum.setText(seuilHum);
 
         saveAlarmeCapteur.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,9 +113,18 @@ public class listeCapteurs extends Activity {
                 Toast.makeText(getApplicationContext(), "Enregistrement des seuils" + messeuilsdecapteurs, Toast.LENGTH_LONG).show();
                 SharedPreferences.Editor editor = sharedPref2.edit();
                 seuilLux = seuil_lux.getText().toString();
-                System.out.println("AAAAA3 : " + seuilLux);
+                seuilHum = seuil_hum.getText().toString();
+                seuilMvt = seuil_mvt.getText().toString();
+                seuilSon = seuil_son.getText().toString();
+                seuilAir = seuil_air.getText().toString();
+                seuilTmp = seuil_temp.getText().toString();
 
                 editor.putString("seuilLux", seuilLux);
+                editor.putString("seuilHum", seuilHum);
+                editor.putString("seuilMvt", seuilMvt);
+                editor.putString("seuilSon", seuilSon);
+                editor.putString("seuilAir", seuilAir);
+                editor.putString("seuilTmp", seuilTmp);
                 editor.apply();
             }
 
