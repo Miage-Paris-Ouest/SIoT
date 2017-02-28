@@ -105,7 +105,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
                 int mesureTemperature = Integer.parseInt(temp);
                 int seuilTemperature = Integer.parseInt(seuilTmp);
-
+System.out.println("temp : " + temp);
+System.out.println("mesureTemperature : " + mesureTemperature + " seuilTemperature : " + seuilTemperature);
 
                 if (mesureTemperature > seuilTemperature ) {
 
@@ -117,98 +118,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
                 }
 
-
-
-                String lux = obj.getString("lux");
-
-                int mesureLux = Integer.parseInt(lux);
-                int seuilLuxe = Integer.parseInt(seuilLux);
-
-
-                if (mesureLux > seuilLuxe ) {
-
-                    sendNotification(titreNotification);
-                    Intent intent = new Intent(this,Dashboard.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.putExtra("titre", titre);
-                    startActivity(intent);
-
-                }
-
-
-
-                String mvt = obj.getString("mvt");
-
-
-                int mesureMvt = Integer.parseInt(mvt);
-                int seuilMvts = Integer.parseInt(seuilMvt);
-
-
-                if (mesureMvt > seuilMvts ) {
-
-                    sendNotification(titreNotification);
-                    Intent intent = new Intent(this,Dashboard.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.putExtra("titre", titre);
-                    startActivity(intent);
-
-                }
-
-
-
-                String son = obj.getString("son");
-
-
-                int mesureSon = Integer.parseInt(son);
-                int seuilSons = Integer.parseInt(seuilSon);
-
-
-                if (mesureSon > seuilSons ) {
-
-                    sendNotification(titreNotification);
-                    Intent intent = new Intent(this,Dashboard.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.putExtra("titre", titre);
-                    startActivity(intent);
-
-                }
-
-
-
-                String air = obj.getString("air");
-
-
-                int mesureQair = Integer.parseInt(air);
-                int seuilQair= Integer.parseInt(seuilAir);
-
-
-                if (mesureQair > seuilQair ) {
-
-                    sendNotification(titreNotification);
-                    Intent intent = new Intent(this,Dashboard.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.putExtra("titre", titre);
-                    startActivity(intent);
-
-                }
-
-
-
-                String hum = obj.getString("hum");
-
-                int mesureNhum = Integer.parseInt(hum);
-                int seuilNhum = Integer.parseInt(seuilHum);
-
-
-                if (mesureNhum > seuilNhum ) {
-
-                    sendNotification(titreNotification);
-                    Intent intent = new Intent(this,Dashboard.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.putExtra("titre", titre);
-                    startActivity(intent);
-
-                }
 
 
 
