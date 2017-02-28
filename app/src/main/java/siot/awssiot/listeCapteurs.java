@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.animation.BounceInterpolator;
 import android.widget.ArrayAdapter;
@@ -102,7 +103,6 @@ public class listeCapteurs extends Activity {
 
         seuilLux = sharedPref2.getString("seuilLux", "");
         seuil_lux.setText(seuilLux);
-
         seuilTmp = sharedPref2.getString("seuilTmp", "");
         seuil_temp.setText(seuilTmp);
         seuilAir = sharedPref2.getString("seuilAir", "");
@@ -122,6 +122,9 @@ public class listeCapteurs extends Activity {
                 capteurs.save();
                 Toast.makeText(getApplicationContext(), "Enregistrement des seuils" + messeuilsdecapteurs, Toast.LENGTH_LONG).show();
                 SharedPreferences.Editor editor = sharedPref2.edit();
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+                SharedPreferences.Editor editor2 = prefs.edit();
+
                 seuilLux = seuil_lux.getText().toString();
                 seuilHum = seuil_hum.getText().toString();
                 seuilMvt = seuil_mvt.getText().toString();
@@ -136,6 +139,15 @@ public class listeCapteurs extends Activity {
                 editor.putString("seuilAir", seuilAir);
                 editor.putString("seuilTmp", seuilTmp);
                 editor.apply();
+
+
+                editor2.putString("seuilLux", seuilLux);
+                editor2.putString("seuilHum", seuilHum);
+                editor2.putString("seuilMvt", seuilMvt);
+                editor2.putString("seuilSon", seuilSon);
+                editor2.putString("seuilAir", seuilAir);
+                editor2.putString("seuilTmp", seuilTmp);
+                editor2.apply();
             }
 
         });
