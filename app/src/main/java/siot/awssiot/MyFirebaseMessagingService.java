@@ -1,5 +1,7 @@
 package siot.awssiot;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -29,6 +31,9 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.StringTokenizer;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
@@ -41,6 +46,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
      * @param remoteMessage Object representing the message received from Firebase Cloud Messaging.
      */
     // [START receive_message]
+    String seuilLux = "";
+    String seuilTmp = "";
+    String seuilAir = "";
+    String seuilHum = "";
+    String seuilMvt = "";
+    String seuilSon = "";
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // [START_EXCLUDE]
@@ -62,13 +73,151 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Log.d(TAG, "Message data payload: " +  remoteMessage.getData());
 
             String titreNotification = remoteMessage.getData().toString().replace("\"pluie\"", "Pluie ").replace("BoitierDeconnecte", "Boîtier Déconnecté").replace("null", " ").replace("\"AlarmDescription\"", " ").replace("\"AlarmName\"", "État").replace("\"EtatConnexion:Success\"", "Boîtier connecté").replace("\"son\"", "Sonorité").replace("\"mvt\":1", "On Mouvement").replace("\"mvt\":0", "Pas de mouvement").replace("\"hum\"", "Humidité").replace("\"lux\"", "Luminosité % ").replace("{default=", "").replace("\"temp\"", "Température").replace("{", "").replace("\"air\"", "Air").replace("}", "").trim();
-            sendNotification(titreNotification);
+
+            try {
+                JSONObject obj = new JSONObject(titreNotification);
+                String temp = obj.getString("temp");
+                System.out.println("AAAA1 : " + temp);
+
+                sendNotification(titreNotification);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
 
             String titre = remoteMessage.getData().toString().replace("{default=", "").trim();
-            Intent intent = new Intent(this,Dashboard.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra("titre", titre);
-            startActivity(intent);
+            try {
+                final SharedPreferences mSharedPreference= PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
+                seuilLux = mSharedPreference.getString("seuilLux", "");
+                seuilTmp = mSharedPreference.getString("seuilTmp", "");
+                seuilAir = mSharedPreference.getString("seuilAir", "");
+                seuilSon = mSharedPreference.getString("seuilSon", "");
+                seuilMvt = mSharedPreference.getString("seuilMvt", "");
+                seuilHum = mSharedPreference.getString("seuilHum", "");
+
+                JSONObject obj = new JSONObject(titre);
+
+
+                String temp = obj.getString("temp");
+
+                int mesureTemperature = Integer.parseInt(temp);
+                int seuilTemperature = Integer.parseInt(seuilTmp);
+
+
+                if (mesureTemperature > seuilTemperature ) {
+
+                    sendNotification(titreNotification);
+                    Intent intent = new Intent(this,Dashboard.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("titre", titre);
+                    startActivity(intent);
+
+                }
+
+
+
+                String lux = obj.getString("lux");
+
+                int mesureLux = Integer.parseInt(lux);
+                int seuilLuxe = Integer.parseInt(seuilLux);
+
+
+                if (mesureLux > seuilLuxe ) {
+
+                    sendNotification(titreNotification);
+                    Intent intent = new Intent(this,Dashboard.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("titre", titre);
+                    startActivity(intent);
+
+                }
+
+
+
+                String mvt = obj.getString("mvt");
+
+
+                int mesureMvt = Integer.parseInt(mvt);
+                int seuilMvts = Integer.parseInt(seuilMvt);
+
+
+                if (mesureMvt > seuilMvts ) {
+
+                    sendNotification(titreNotification);
+                    Intent intent = new Intent(this,Dashboard.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("titre", titre);
+                    startActivity(intent);
+
+                }
+
+
+
+                String son = obj.getString("son");
+
+
+                int mesureSon = Integer.parseInt(son);
+                int seuilSons = Integer.parseInt(seuilSon);
+
+
+                if (mesureSon > seuilSons ) {
+
+                    sendNotification(titreNotification);
+                    Intent intent = new Intent(this,Dashboard.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("titre", titre);
+                    startActivity(intent);
+
+                }
+
+
+
+                String air = obj.getString("air");
+
+
+                int mesureQair = Integer.parseInt(air);
+                int seuilQair= Integer.parseInt(seuilAir);
+
+
+                if (mesureQair > seuilQair ) {
+
+                    sendNotification(titreNotification);
+                    Intent intent = new Intent(this,Dashboard.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("titre", titre);
+                    startActivity(intent);
+
+                }
+
+
+
+                String hum = obj.getString("hum");
+
+                int mesureNhum = Integer.parseInt(hum);
+                int seuilNhum = Integer.parseInt(seuilHum);
+
+
+                if (mesureNhum > seuilNhum ) {
+
+                    sendNotification(titreNotification);
+                    Intent intent = new Intent(this,Dashboard.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("titre", titre);
+                    startActivity(intent);
+
+                }
+
+
+
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
 
         }
 

@@ -15,12 +15,7 @@ import org.json.JSONObject;
 
 
 public class Dashboard extends AppCompatActivity {
-    String seuilLux = null;
-    String seuilTmp = "";
-    String seuilAir = null;
-    String seuilHum = null;
-    String seuilMvt = null;
-    String seuilSon = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,18 +115,7 @@ public class Dashboard extends AppCompatActivity {
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
 
-        final SharedPreferences mSharedPreference= PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
-
-        listeCapteurs lc = new listeCapteurs();
-
-        seuilLux = mSharedPreference.getString("seuilLux", "");
-        seuilTmp = mSharedPreference.getString("seuilTmp", "");
-        seuilAir = mSharedPreference.getString("seuilAir", "");
-        seuilSon = mSharedPreference.getString("seuilSon", "");
-        seuilMvt = mSharedPreference.getString("seuilMvt", "");
-        seuilHum = mSharedPreference.getString("seuilHum", "");
-        
 
         String tempSaved = null;
         String tempRecup = sharedPref.getString("temp", "");
