@@ -76,7 +76,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
             try {
                 JSONObject obj = new JSONObject(titreNotification);
-                String temp = obj.getString("temp");
+                String temp = obj.getString("lux");
                 System.out.println("AAAA1 : " + temp);
 
                 sendNotification(titreNotification);
@@ -92,19 +92,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 final SharedPreferences mSharedPreference= PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
                 seuilLux = mSharedPreference.getString("seuilLux", "");
-                seuilTmp = mSharedPreference.getString("seuilTmp", "");
-                seuilAir = mSharedPreference.getString("seuilAir", "");
-                seuilSon = mSharedPreference.getString("seuilSon", "");
-                seuilMvt = mSharedPreference.getString("seuilMvt", "");
-                seuilHum = mSharedPreference.getString("seuilHum", "");
+
 
                 JSONObject obj = new JSONObject(titre);
 
 
-                String temp = obj.getString("temp");
+                String temp = obj.getString("lux");
 
                 int mesureTemperature = Integer.parseInt(temp);
-                int seuilTemperature = Integer.parseInt(seuilTmp);
+                int seuilTemperature = Integer.parseInt(seuilLux);
 System.out.println("temp : " + temp);
 System.out.println("mesureTemperature : " + mesureTemperature + " seuilTemperature : " + seuilTemperature);
 

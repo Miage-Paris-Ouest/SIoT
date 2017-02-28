@@ -117,11 +117,11 @@ public class Dashboard extends AppCompatActivity {
 
 
 
-        String tempSaved = null;
-        String tempRecup = sharedPref.getString("temp", "");
+        String luxSaved = null;
+        String luxRecup = sharedPref.getString("lux", "");
 
 
-        progress_circle_temp.setText(tempRecup);
+        progress_circle_temp.setText(luxRecup);
 
 
         try {
@@ -129,12 +129,19 @@ public class Dashboard extends AppCompatActivity {
             Log.d("My App", obj.toString());
 
 
-            String temp = obj.getString("temp");// Double temp1=  Double.parseDouble(temp);
-            tempSaved = temp;
+            String lux = obj.getString("lux");
+            progress_circle_lux.setText(lux);
+
+
+            luxSaved = lux;
 
             SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putString("temp", tempSaved);
+            editor.putString("lux", luxSaved);
             editor.apply();
+
+
+
+            String temp = obj.getString("temp");// Double temp1=  Double.parseDouble(temp);
             progress_circle_temp.setText(temp);
 
 
@@ -142,8 +149,7 @@ public class Dashboard extends AppCompatActivity {
 
 
 
-            String lux = obj.getString("lux");
-            progress_circle_lux.setText(lux);
+
 
             String mvt = obj.getString("mvt");
             progress_circle_mvt.setText(mvt);
