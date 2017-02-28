@@ -121,7 +121,7 @@ public class Dashboard extends AppCompatActivity {
         String luxRecup = sharedPref.getString("lux", "");
 
 
-        progress_circle_temp.setText(luxRecup);
+        progress_circle_lux.setText(luxRecup);
 
 
         try {
