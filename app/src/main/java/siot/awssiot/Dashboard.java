@@ -139,15 +139,8 @@ public class Dashboard extends AppCompatActivity {
             editor.putString("lux", luxSaved);
             editor.apply();
 
-
-
             String temp = obj.getString("temp");// Double temp1=  Double.parseDouble(temp);
             progress_circle_temp.setText(temp);
-
-
-
-
-
 
 
 
