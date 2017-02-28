@@ -63,17 +63,27 @@ public class listeCapteurs extends Activity {
         sharedPref2 = this.getPreferences(Context.MODE_PRIVATE);
 
         switchLumiere = (Switch) findViewById(R.id.switchLumiere);
-        switchTemp = (Switch) findViewById(R.id.switchLumiere);
-        switchAir = (Switch) findViewById(R.id.switchLumiere);
-        switchHumidity = (Switch) findViewById(R.id.switchLumiere);
+        switchTemp = (Switch) findViewById(R.id.switchTemp);
+        switchAir = (Switch) findViewById(R.id.switchAir);
+        switchHumidity = (Switch) findViewById(R.id.switchHumidity);
         switchMVT = (Switch) findViewById(R.id.switchMVT);
         switchSon = (Switch) findViewById(R.id.switchSon);
 
         Boolean sLum = sharedPref2.getBoolean("putBoolean", true);
+        Boolean sHum = sharedPref2.getBoolean("putBooleanHUM", true);
+        Boolean sAir = sharedPref2.getBoolean("putBooleanAIR", true);
+        Boolean sTmp = sharedPref2.getBoolean("putBooleanTMP", true);
+        Boolean sSon = sharedPref2.getBoolean("putBooleanSON", true);
+        Boolean sMVT = sharedPref2.getBoolean("putBooleanMVT", true);
 
 
 
         if (sLum) {switchLumiere.setChecked(sLum);}
+        if (sMVT) {switchMVT.setChecked(sMVT);}
+        if (sHum) {switchHumidity.setChecked(sHum);}
+        if (sAir) {switchAir.setChecked(sAir);}
+        if (sTmp) {switchTemp.setChecked(sTmp);}
+        if (sSon) {switchSon.setChecked(sSon);}
 
         saveAlarmeCapteur = (Button) findViewById(R.id.alarmButton);
         seuil_lux = (EditText) findViewById(R.id.seuil_lux);
@@ -313,7 +323,7 @@ public class listeCapteurs extends Activity {
     public void switchTmpOn(){
         tmp = true;
         SharedPreferences.Editor editor2 = sharedPref2.edit();
-        editor2.putBoolean("putBoolean", true);
+        editor2.putBoolean("putBooleanTMP", true);
         editor2.apply();
     }
 
@@ -321,7 +331,7 @@ public class listeCapteurs extends Activity {
     public void switchTmpOff(){
         tmp = false;
         SharedPreferences.Editor editor2 = sharedPref2.edit();
-        editor2.putBoolean("putBoolean", false);
+        editor2.putBoolean("putBooleanTMP", false);
         editor2.apply();
     }
 
@@ -329,7 +339,7 @@ public class listeCapteurs extends Activity {
     public void switchAirOn(){
         air = true;
         SharedPreferences.Editor editor2 = sharedPref2.edit();
-        editor2.putBoolean("putBoolean", true);
+        editor2.putBoolean("putBooleanAIR", true);
         editor2.apply();
     }
 
@@ -337,7 +347,7 @@ public class listeCapteurs extends Activity {
     public void switchAirOff(){
         air = false;
         SharedPreferences.Editor editor2 = sharedPref2.edit();
-        editor2.putBoolean("putBoolean", false);
+        editor2.putBoolean("putBooleanAIR", false);
         editor2.apply();
     }
 
@@ -345,7 +355,7 @@ public class listeCapteurs extends Activity {
     public void switchHumOn(){
         hum = true;
         SharedPreferences.Editor editor2 = sharedPref2.edit();
-        editor2.putBoolean("putBoolean", true);
+        editor2.putBoolean("putBooleanHUM", true);
         editor2.apply();
     }
 
@@ -353,7 +363,7 @@ public class listeCapteurs extends Activity {
     public void switchHumOff(){
         hum = false;
         SharedPreferences.Editor editor2 = sharedPref2.edit();
-        editor2.putBoolean("putBoolean", false);
+        editor2.putBoolean("putBooleanHUM", false);
         editor2.apply();
     }
 
@@ -361,7 +371,7 @@ public class listeCapteurs extends Activity {
     public void switchMvtOn(){
         mvt = true;
         SharedPreferences.Editor editor2 = sharedPref2.edit();
-        editor2.putBoolean("putBoolean", true);
+        editor2.putBoolean("putBooleanMVT", true);
         editor2.apply();
     }
 
@@ -369,7 +379,7 @@ public class listeCapteurs extends Activity {
     public void switchMvtOff(){
         mvt = false;
         SharedPreferences.Editor editor2 = sharedPref2.edit();
-        editor2.putBoolean("putBoolean", false);
+        editor2.putBoolean("putBooleanMVT", false);
         editor2.apply();
     }
 
@@ -377,7 +387,7 @@ public class listeCapteurs extends Activity {
     public void switchSonOn(){
         son = true;
         SharedPreferences.Editor editor2 = sharedPref2.edit();
-        editor2.putBoolean("putBoolean", true);
+        editor2.putBoolean("putBooleanSON", true);
         editor2.apply();
     }
 
@@ -385,7 +395,7 @@ public class listeCapteurs extends Activity {
     public void switchSonOff(){
         son = false;
         SharedPreferences.Editor editor2 = sharedPref2.edit();
-        editor2.putBoolean("putBoolean", false);
+        editor2.putBoolean("putBooleanSON", false);
         editor2.apply();
     }
 
