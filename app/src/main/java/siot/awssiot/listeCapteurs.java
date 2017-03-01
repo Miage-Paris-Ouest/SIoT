@@ -98,7 +98,6 @@ public class listeCapteurs extends Activity {
         adapter = new ArrayAdapter<Capteurs>(listeCapteurs.this, android.R.layout.simple_list_item_1, messeuilsdecapteurs);
         list_seuil.setAdapter(adapter);
 
-        Toast.makeText(getApplicationContext(),"ma liste de seuil: " +list_seuil, Toast.LENGTH_LONG).show();
 
         seuilLux = sharedPref2.getString("seuilLux", "");
         seuil_lux.setText(seuilLux);
@@ -120,7 +119,6 @@ public class listeCapteurs extends Activity {
                 Toast.makeText(getApplicationContext(), "Envoi des paramètres personnalisés à AWS", Toast.LENGTH_LONG).show();
                 capteurs = new Capteurs(seuil_lux.getText().toString());
                 capteurs.save();
-                Toast.makeText(getApplicationContext(), "Enregistrement des seuils" + messeuilsdecapteurs, Toast.LENGTH_LONG).show();
                 SharedPreferences.Editor editor = sharedPref2.edit();
                 seuilLux = seuil_lux.getText().toString();
                 seuilHum = seuil_hum.getText().toString();
